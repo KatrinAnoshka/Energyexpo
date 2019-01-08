@@ -18,12 +18,12 @@
 	</head>
 	<body>
 
-	<!--****** Header-section ******-->
+	<!--***************** Header-section *****************-->
 		
 		<header class="header">
 			<div class="header__wrap">
 				<a class="logo__wrap" href="home.html"> 
-					<img class="logo"  src="img/Logo-red.png" alt="Logo">
+					<img class="logo"  src="img/header/Logo-red.png" alt="Logo">
 				</a>	
 					
 				<nav class="navigation">
@@ -43,30 +43,55 @@
 					</ul>									            
 				</nav><!-- /end of Navigation -->	
 				
-				<div class="top-search">
-					<div class="search-form">
+				<div class="top__search">
+					<div class="search__form">
         				<form >
           					<span style="width: 0px; overflow: hidden;"><input autocomplete="off" type="text" name="q" value="" placeholder="Поиск..."></span>
           					<button type="submit">Поиск</button>
         				</form>
       				</div>
-      				<ul class="search-result"></ul>		
+      				<ul class="search__result"></ul>		
 
       				<div id="lang__menu">
 					    <div>RU</div>
 					    <ul>
-					      <li>EN</li>
-					      <li>RU</li>
+					      <li><a href="#">EN</a></li>
+					      <li><a href="#">RU</a></li>
 					    </ul>
 					</div>
-				</div>
+				</div><!-- /end of Top__search -->				
 
 			</div><!-- /end of Header__wrap -->				
 		</header>
 
+		<!--*********** Forum-section ***********-->
+
+		<section class="forum">
+			
+			<div class="forum__wrap">
+				<h1 class="title">Белорусский энергетический и экологический форум</h1>
+				<div class="flexslider">
+				  	<ul class="slides">
+					    <li>
+					      GHJKLL
+					    </li>
+					    <li>
+					      GHdddddd
+					    </li>
+					    <li>
+					      GHJaaaaaaa
+					    </li>
+				  	</ul>
+				</div>
+				<p class="forum__address">г. Минск, пр-т Победителей 20/2</p>
+				<a href="#" class="button button__buy">Купить билет</a>
+			</div><!-- /end of Forum__wrap -->	
+
+		</section><!-- /end of Forum-section -->	
+
 
 		<script src="libs/jquery/jquery-1.11.2.min.js"></script>
-		<script src="libs/slick/slick.min.js"></script>
+		<script src="libs/flexslider/jquery.flexslider.js"></script>
 		<script src="js/common.js"></script>
 			
 	</body>

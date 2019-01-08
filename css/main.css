@@ -1,7 +1,9 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Lato', sans-serif;
+	font-family: "Ubuntu";
+  
+    font-style: normal;
 	font-size: 16px;
 	position: relative;
     overflow-x: hidden;
@@ -20,18 +22,17 @@ a.button {
     max-width: 100%;
     cursor: pointer;
     text-decoration: none;
-    width: 280px;
-    height: 52px;
+    /*width: 280px;*/
+    /*height: 52px;*/
     border-radius: 40px;
-    background-color: #ffc000;
+    /*background-color: #ffc000;*/
     color: #fff;
     line-height: 2.6;
     font-weight: bold;
     font-size: 1.1em;
     text-align: center;
-    margin: 0 auto;
-    -o-transition: color 0.2s ease-out,opacity 0.2s ease-out,background 0.2s ease-out;
-    transition: color 0.2s ease-out,opacity 0.2s ease-out,background 0.2s ease-out;
+    /*margin: 0 auto;*/
+    
 }
 input, 
 .button, 
@@ -93,8 +94,8 @@ input,
 }
 .menu__links-item a:hover,
 .menu__links-item a:active {
-	color: #fff;
-	border-bottom: 1px solid #fff;
+	color: #e31e24;
+	/*border-bottom: 1px solid #fff;*/
 }
 
 /************** Adaptive menu **************/
@@ -181,51 +182,39 @@ input,
 	top: 11px;
 }
 
-/*Header*===========*/
+/*****Header========Top__search*****/
 
-.header__wrap .search-form {
+.top__search {
+    position: relative;
+    float: right
+}
+.search__form {
     z-index: 500;
     position: relative;
     height: 50px;
     float: right
 }
-
-.top-search {
-    position: relative;
-    float: right
-}
-
-.header__wrap .search-form button {
+.search__form button {
     border: 2px solid #fff;
-    /*border-width: 0 2px;*/
     position: relative;
     z-index: 100;
-    /*transition: background-color 0.2s ease-out;*/
     display: block;
     text-indent: -9999px;
-    background: #fff url('../img/ico-search.png') 50% 50% no-repeat;
-    background-size: 42% auto;
-    width: 50px;
+    background: #fff url('../img/header/ico-search.png') 100% 50% no-repeat;
+    width: 38px;
     height: 50px;
+    padding-right: 0;
     cursor: pointer
 }
-
-/*.header__wrap .search-form button:hover {
-    transition: background-color 0.2s ease-out;
-    background-color: #e16572
-}*/
-
-.header__wrap .search-form span {
+.search__form span {
     z-index: 50;
     position: absolute;
     top: 0;
     right: 100%;
     width: 0;
-    /*margin-right: 1px;*/
     background: #fff
 }
-
-.header__wrap .search-form span input {
+.search__form span input {
     background: none;
     border: none;
     padding: 16px 14px;
@@ -233,6 +222,7 @@ input,
     font-size: 14px;
     width: 100%
 }
+/*****Header========Switch__lang*****/
 
 #lang__menu {
 	width: 120px;
@@ -240,19 +230,19 @@ input,
     font-family: 'Roboto Medium';
     font-size: 1.125em;
     color: rgb(30, 33, 50);
-  line-height: 1.2;
+  	line-height: 1.2;
     position: absolute;
     top: 4px;
-    right: 45px;
-  	border:1px solid rgba(255,255,255,0);
-  	transition:all .3s ease;
-  	-webkit-transition:all .3s ease;
-  	-moz-transition:all .3s ease;
-  	-o-transition:all .3s ease;
+    right: 35px;
+  	border: 1px solid rgba(255,255,255,0);
+  	transition: all .3s ease;
+  	-webkit-transition: all .3s ease;
+  	-moz-transition: all .3s ease;
+  	-o-transition: all .3s ease;
 }
 #lang__menu:after {
 	content: '';
-	background-image: url(../img/down-arrow.png);
+	background-image: url(../img/header/down-arrow.png);
 	width: 15px;
     height: 12px;
     position: absolute;
@@ -260,40 +250,98 @@ input,
     right: 26px;
 }
 #lang__menu div {
-  height:25px;
-  text-align:center;
-  padding:10px;
-  border-bottom:1px solid rgba(255,255,255,0);
-  transition:all .2s ease;
-  -webkit-transition:all .2s ease;
-  -moz-transition:all .2s ease;
-  -o-transition:all .2s ease;
-  
+  	height: 25px;
+  	text-align: center;
+  	padding: 10px;
+  	border-bottom: 1px solid rgba(255,255,255,0);
+  	transition: all .2s ease;
+  	-webkit-transition: all .2s ease;
+  	-moz-transition: all .2s ease;
+  	-o-transition: all .2s ease;
 }
-/*.cls-borderbottom-lang {
-  border-bottom:1px solid red !important;
-  opacity:.2;
-}
-.cls-border-lang {
-  border:1px solid red !important;
-}*/
 #lang__menu ul {
-  list-style:none;
-  margin:0px;
-  padding:0px;
-  padding-top: 10px;
-  display:none; 
-  text-align:center;
+  	list-style: none;
+  	margin: 0px;
+  	padding: 0px;
+  	padding-top: 10px;
+  	display: none; 
+  	text-align: center;
 }
 #lang__menu ul li {
-  padding:5px 0px;
-  transition:all .3s ease;
-  -webkit-transition:all .3s ease;
-  -moz-transition:all .3s ease;
-  -o-transition:all .3s ease;
+  	padding: 5px 0px;
+  	transition: all .3s ease;
+  	-webkit-transition: all .3s ease;
+  	-moz-transition: all .3s ease;
+  	-o-transition: all .3s ease;
 }
-#lang__menu ul li:hover {  
-  cursor:pointer;
-  color:#acccfd;
-  background:rgba(255,255,255,.1);
+#lang__menu ul li a:hover {  
+  	cursor: pointer;
+  	color: #acccfd;
 }
+
+/*************Forum-section*************/
+
+section.forum {
+	background-image: url(../img/forum/forum-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*background-attachment: fixed;*/
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+.forum__wrap {
+	width: 840px;
+    max-width: 100%;
+    padding: 115px 20px 120px;
+    margin: auto;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -ms-align-items: center;
+    align-items: center;
+}
+h1.title {
+  	font-size: 2.8125em;
+  	font-weight: 500;
+  	color: rgb(242, 242, 242);
+  	text-transform: uppercase;
+  	line-height: 1.2;
+  	text-align: center;
+  	padding: 0 10px 50px;
+  	margin-top: 0;
+}
+.forum__address {
+  	font-size: 1.875em;
+  	font-weight: 300;
+  	color: rgb(242, 242, 242);
+  	line-height: 1.2;
+  	text-align: center;
+}
+a.button__buy {
+  	font-size: 1.125em;
+  	font-weight: 300;
+  	font-family: 'Roboto Medium';
+  	color: rgb(242, 242, 242);
+  	text-transform: uppercase;
+  	line-height: 3.4;
+  	width: 190px;
+  	height: 60px;
+  	background: linear-gradient(to top right,#9d281f 46%,#a23123,#af503e 80%);
+  	margin-top: 50px;
+  	/*transition: all 0.5s ease-out;*/
+}
+a.button__buy:hover {
+	background: linear-gradient(to bottom right,#291c47 46%,#2c306d,#1e3c6e 80%);
+}
+
+
+
