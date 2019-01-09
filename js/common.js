@@ -128,7 +128,26 @@ $(window).load(function() {
   $('.forum__flexslider').flexslider({
     animation: "slide",
     touch: true,
+    controlNav: false,
+    directionNav: false,
     minItems: 1,
     maxItems: 1
+  });
+});
+
+$(window).load(function() {
+  $('.support__flexslider').flexslider({
+  animation: "slide",
+    animationLoop: true,
+    easing: "linear",
+    useCSS: false,
+    slideshow: true,
+    slideshowSpeed: 1,
+    animationSpeed: 4000,
+    controlNav: false,
+    directionNav: false,
+    pauseOnHover: true,
+    // minItems: 5,
+    // move: 5
   });
 });
