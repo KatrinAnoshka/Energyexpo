@@ -382,6 +382,7 @@ a.button__red:hover {
     max-width: 100%;
     height: auto;
     background-color: #fff;
+    position: relative;
 }
 .topics__img {
     width: 500px;
@@ -435,7 +436,7 @@ h2.subtitle {
 .topics__item {
     cursor: pointer;
     position: relative;
-    z-index: 1;
+    z-index: 120;
     margin: 0 5px;
 }
 .topics__bg {
@@ -488,6 +489,7 @@ h2.subtitle {
 }
 
 a.button__topics {
+    z-index: 120;
     font-size: 0.7869em;
     font-weight: 300;
     line-height: 3.4;
@@ -500,20 +502,84 @@ a.button__topics {
 a.button__topics:hover {
     background: linear-gradient(to top right,#9d281f 46%,#a23123,#af503e 80%);
 }
-/*Canvas*/
-#particle-canvas {
-  width: 20%;
-    height: 100%;
-    /*bottom: 50%;*/
-    float: right;
+
+/****==================Canvas==================****/
+
+.particle-network-animation {
+    position: absolute;
+    overflow: hidden;
+    width: 450px;
+    top: -115px;
+    right: 0;
+    height: 845px;
+    background-color: rgba(255, 255, 255, 0);
 }
-#particle-canvas div {
-    background: rgba(255,255,255,0) !important;
+/*.particle-network-animation::before {
+  z-index: -2;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(https://s10.postimg.org/yt7hgnms9/vlogo.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}*/
+
+/*.glow {
+  z-index: -1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-image: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.025), transparent);
 }
-.hh {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+
+.glow-1 {
+  width: 150vw;
+  height: 150vh;
+  margin-top: -75vh;
+  margin-left: -75vw;
+  animation: glow-1-move 25s linear infinite both;
 }
+
+@keyframes glow-1-move {
+  from {
+    transform: translate(-100%, 100%);
+  }
+  to {
+    transform: translate(100%, -100%);
+  }
+}
+.glow-2 {
+  width: 100vw;
+  height: 100vh;
+  margin-top: -50vh;
+  margin-left: -50vw;
+  animation: glow-2-move 25s linear 8.3333333333s infinite both;
+}
+
+@keyframes glow-2-move {
+  from {
+    transform: translate(-100%, 0%);
+  }
+  to {
+    transform: translate(100%, 100%);
+  }
+}
+.glow-3 {
+  width: 120vw;
+  height: 120vh;
+  margin-top: -60vh;
+  margin-left: -60vw;
+  animation: glow-3-move 25s linear 16.6666666667s infinite both;
+}
+
+@keyframes glow-3-move {
+  from {
+    transform: translate(100%, 100%);
+  }
+  to {
+    transform: translate(0%, -100%);
+  }
+}*/
