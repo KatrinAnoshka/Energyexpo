@@ -135,19 +135,6 @@ $(window).load(function() {
   });
 });
 
-$(window).load(function() {
-  $('.support__flexslider').flexslider({
-  animation: "slide",
-    animationLoop: true,
-    easing: "linear",
-    useCSS: false,
-    slideshow: true,
-    slideshowSpeed: 1,
-    animationSpeed: 4000,
-    controlNav: false,
-    directionNav: false,
-    pauseOnHover: true,
-    // minItems: 5,
-    // move: 5
-  });
+$(window).load(function(){
+    $('.str').liMarquee();
 });
