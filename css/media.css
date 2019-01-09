@@ -4,20 +4,7 @@
 
 @media only screen and (max-width: 1600px) {
 
-/************** Contacts-section **************/
 
-    .contacts__map {
-        width: 500px;
-        padding: 50px 60px 0;
-        padding-left: 10px;
-        overflow: hidden;
-    }
-    
-/************ Home-page/////Sponsors-section ************/
-
-    .sponsors .slick-next, .sponsors .slick-prev {
-        display: none !important;
-    }
     
 }
 
@@ -25,409 +12,101 @@
     
 /**************** Header-section ****************/
 
-    .menu {
-        padding-right: 22px;
-    }
-
-/************** Contacts-section **************/
-
-    .contacts__container {
-        -webkit-flex-direction: column;
-        -moz-flex-direction: column;
-        -ms-flex-direction: column;
-        -o-flex-direction: column;
-        flex-direction: column;
-        -ms-align-items: center;
-        align-items: center;
-    }   
-    .contacts__wrap {
-        text-align: center;
-    }
-    .contacts__map {
-        padding-left: 0;
-        width: 405px;
-    }    
-    
-/************** Home-page/////Slider-main-section **************/ 
-
-    .slider__main h3 {
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-                transform: translateX(-50%);
-        margin-left: 35px;
-    }
-    
-/************** Home-page/////Sponsors-section **************/
-
-    .sponsors {
-        width: auto; 
-    }
-
-/*************** Our__news-page////Contact-section ***************/
-
-    .contacts--blue .contacts__wrap h2,
-    .contacts--white .contacts__wrap h2 {
-        text-align: center;
-    }
-    
-}
- 
-/* Medium Devices, Desktops */
-
-@media only screen and (max-width: 992px) {
-    
-/****************** Header-section ******************/
-    
     .menu__icon {
         display: block;
     }
     .menu {
         display: none;
     }
-    ul.submenu > li > a {
-        padding-bottom: 5px;
-        padding-top: 0;
-    }
-    .header__bottom.menu_state_open .menu__links {
-        width: -webkit-fill-available;
-    }
-
-/***************** Contacts-section *****************/
-    
-    .contacts__container {
-        padding-top: 40px;
-    }
-    .scl__icons a {
-        padding-right: 0;
+    .navigation__wrap {
+        -webkit-flex-direction: column-reverse;
+        -moz-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+        -o-flex-direction: column-reverse;
+        flex-direction: column-reverse;
     }
 
-/********** Home-page///Slider-main-section **********/
-
-    .news__wrap {
-        margin-top: 3%;
-    }
-   
 }
+/* Medium Devices, Desktops */
+
+@media only screen and (max-width: 992px) {
+    
+/****************** Header-section ******************/
+    
+  }
+
+
 
 @media only screen and (max-width: 880px) {
 
-/********** Home-page/////Slider-main-section **********/
 
-    .slider__main .slick-slide img {
-        margin: 0 -3% !important;
-    }
-
-/***************** Contacts *****************/
-
-    .contacts--blue .contacts__wrap,
-    .contacts--white .contacts__wrap {
-        -moz-flex-direction: column;
-        -o-flex-direction: column;
-            flex-direction: column;
-        -ms-align-items: center;
-            align-items: center;
-    } 
-
-/***************** Review-page *****************/
-
-    .review__form-wrap {
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: flex;
-        -moz-flex-direction: column;
-        -o-flex-direction: column;
-        flex-direction: column;
-        -ms-align-items: center;
-        align-items: center;
-    }   
-    .review__form-textarea {
-        margin-right: 0;
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: flex;
-        -ms-align-items: center;
-        align-items: center;
-    }
-    .review__form-subtitle {
-        text-align: center;
-    }
 }
 
 /* Small Devices, Tablets */
 
 @media only screen and (max-width: 768px) {
 
-/************** Header-section **************/
 
-    .header__text {
-        margin-bottom: 26px;
-        font-size: 14px;
-    }
-    .ru {
-        padding-left: 0;
-        font-size: 18px;
-    }
-    .en {
-        padding-left: 10px;
-        font-size: 18px;
-    }
-    .search {
-        padding-top: 0;
-        padding-left: 0;
-        margin: 0 auto;
-    }   
-    .menu__icon {
-        bottom: 0;
-    } 
-
-/************** Home-page////News-section **************/
-
-    .news__container {
-        padding-top: 20px;
-    }
-    .news__title, .sponsors h2 {
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-    .news__wrap {
-        width: 300px;
-    }  
-
-/*************** Palliativ-page/////Comments ***************/
-
-    .comments__wrap {
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: flex;
-        -moz-flex-direction: column;
-        -o-flex-direction: column;
-        flex-direction: column;
-        -ms-align-items: center;
-        align-items: center;
-    }
-    .comments__textarea {
-        margin-right: 0;
-    }
-    .share__wrap, 
-    .comments__subtitle {
-        text-align: center;
-    }
-
-    /************** Team-page//////// **************/
-
-    .team-page .team__item {
-        float: none;
-        margin: 0 auto 30px;
-    }
-    .team-page__subtitle {
-        text-align: center;
-    }
-
-    /************* Projects-page/////// *************/
-
-    .projects .news__item-wrap h4 {
-        font-size: 0.8em;
-    }
-    .ribbon,
-    .ribbon__triangle-l,
-    .ribbon__triangle-r {
-        opacity: 1;
-    }
-
-    /************** Donation-page/////// **************/
-
-    .white__title {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .payment__webpay {
-        display: none;
-    }
 }
 
 @media only screen and (max-width: 550px) {
-
-/************** Header-section **************/
-
-    .logo {
-        width: 100px;
+    body {
+        font-size: 12px;
     }
     .header {
-        padding: 10px;
+        padding: 20px 10px 30px;
     }
-    .header__top {
-        padding: 0 10px;
+    .logo {
+        width: 70%;
     }
-    .header__bottom.menu_state_open .menu__links {
-        top: 132px;
-    }
-
-/*************** News-section ***************/
-    
-    /*.news__wrap {
-        width: 300px;
-    }*/
-
-/*************** Library-page///// ***************/
-
-    .library .news__wrap {
-        margin: 0 3% 14%;
+    #lang__menu ul li {
+        background-color: transparent;
     }
 
-/*************** Review-page///// ***************/
+    /*Forum-section*/
 
-    .review__form-area {
-        width: 95%;
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
-/************ Donation-page//////// ************/
-
-    .donation .white__title  {
-        font-size: 2.4em;
-    }
-    .summ__title,
-    .monthly__title  {
-        font-size: 1.5em;
-    }
-    .approve__title {
-        width: 100%;
-        padding-right: 10px;
-    }
-
-    /************ Palliativ-page//////// ************/
-
-    .palliativ .white__title  {
-        margin-top: -30px;
+    .forum__wrap {
+        padding: 60px 10px;
     }
 }   
+
 
 /* Extra Small Devices, Phones */
 
 @media only screen and (max-width: 500px) {
     
-/**************** Header-section ****************/
 
-    .logo__wrap {
-        padding-top: 9px;
-        padding-left: 0px;
-    }
-    .header__top {   
-        display: none;
-    }
-    .header__bottom.menu_state_open .menu__links {
-        top: 112px;
-    }
-
-/************* Contacts-section *************/ 
-
-    .contacts__map {
-        width: 350px;
-    }
-
-/*************** Home-page/////Sponsors-section ***************/
-
-    .sponsors {
-        padding: 0 20px;
-    }
-
-/************* Our__news-page////Pagination *************/
-
-    .pagination {
-        padding-bottom: 53px;
-    }
-
-/************* Review-page/////// *************/
-
-    .review__button {
-        left: 10%;
-    }
  
 }
 
 @media only screen and (max-width: 476px) {
 
-/************ Home-page////Sponsors-section ************/
 
-    .sponsors {
-        height: 480px;
-    }
 }
 
 @media only screen and (max-width: 450px) {
 
-/********** Home-page////Slider-main-section **********/
-
-    .slider__main .slick-dots {
-        bottom: 265px;
-    }
-    .slider__main {
-        height: 725px;
+    body {
+        font-size: 10px;
     }
 
 }
 
 @media only screen and (max-width: 430px) {
     
-/************* News-section *************/
 
-   /* .news__wrap {
-        width: 300px;
-    }*/
-
-/************ Contacts-section ************/
-
-    .contacts__map {
-        width: 310px;
-        height: 310px;
-    }
 
 }
 
 @media only screen and (max-width: 400px) {
     
-/************ Contacts-section ************/
-
-    .contacts__map {
-        width: 250px;
-        height: 250px;
-    }
-
-/************ Palliativ-page////// ************/
-
-    .comments__label {
-            width: 243px;
-    }
-
-/********** Team-page///// **********/
-
-    .team__wrap {
-        padding: 22px 10px;
-    }
-
-    .team-page__wrap {
-        padding: 0 10px;
-    }
-/************ Team-page//////// ************/
-
-    .team-page .white__title  {
-        margin-top: -30px;
-    }    
+  
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 350px) {
 
-/************* Header-section *************/
 
-    .menu__icon {
-        margin-right: 0;
-    }
 }
 
 /*==========  Other Methods  ==========*/
