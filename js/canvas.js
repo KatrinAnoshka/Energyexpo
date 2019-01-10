@@ -81,8 +81,8 @@ $(document).ready(function() {
             velocity: 1, // the higher the faster
             density: 15000, // the lower the denser
             netLineDistance: 200,
-            netLineColor: '#a0d2ea',
-            particleColors: ['#a0d2ea'] // ['#6D4E5C', '#aaa', '#FFC458' ]
+            netLineColor: '#7692c7',
+            particleColors: ['#7692c7'] // ['#6D4E5C', '#aaa', '#FFC458' ]
         };
         this.canvas = parent.canvas;
         this.ctx = parent.ctx;

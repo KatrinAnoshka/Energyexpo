@@ -8,6 +8,15 @@
     url('../fonts/Roboto/Roboto-Medium.ttf') format('truetype');
 }
 @font-face {
+    font-family: 'Roboto Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/Roboto/Roboto-Regular.eot');
+    src: url('../fonts/Roboto/Roboto-Regular.eot?#iefix')format("embedded-opentype"),
+    url('../fonts/Roboto/Roboto-Regular.woff') format('woff'),
+    url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
     font-family: 'Ubuntu';
     font-weight: 500;
     font-style: normal;

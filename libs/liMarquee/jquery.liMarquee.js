@@ -1,11 +1,11 @@
 /*
- * jQuery liMarquee v 4.1
+ * jQuery liMarquee v 4.6
  *
  * Copyright 2013, Linnik Yura | LI MASS CODE | http://masscode.ru
  * http://masscode.ru/index.php/k2/item/44-limarquee
  * Free to use
  *
- * Last Update 09.02.2014
+ * Last Update 20.11.2014
  */
 (function ($) {
 	var methods = {
@@ -34,25 +34,36 @@
 					leaveEvent = 'mouseenter';	
 				}
 				
-				
-				
+								
 				var
 					loop = p.loop,
-					strWrap = $(this).addClass('str_wrap'),
+					strWrap = $(this).addClass('str_wrap').data({scrollamount:p.scrollamount}),
 					fMove = false;
 					
-					
-					
-					
+				
+				
+				var strWrapStyle = strWrap.attr('style'); 
+				
+				if(strWrapStyle){
+					var wrapStyleArr = strWrapStyle.split(';');
+					var startHeight = false;
+					for(var i=0; i < wrapStyleArr.length; i++){
+						var str = $.trim(wrapStyleArr[i]);					
+						var tested =  str.search(/^height/g);
+						if(tested != -1){
+							startHeight = parseFloat(strWrap.css('height'));
+						}
+					}
+				}
+
 				var code = function () {
-					
 					
 					strWrap.off('mouseleave');
 					strWrap.off('mouseenter');
 					strWrap.off('mousemove');
 					strWrap.off('mousedown');
 					strWrap.off('mouseup');
-					
+
 					
 					if(!$('.str_move',strWrap).length){
 						strWrap.wrapInner($('<div>').addClass('str_move'));
@@ -62,9 +73,7 @@
 					strMove = $('.str_move', strWrap).addClass('str_origin'),
 					strMoveClone = strMove.clone().removeClass('str_origin').addClass('str_move_clone'),
 					time = 0;
-					
-					
-					
+
 					if (!p.hoverstop) {
 						strWrap.addClass('noStop');
 					}
@@ -120,10 +129,10 @@
 								timeFunc1 = function () {
 									var
 									fullS = Math.abs(leftPos),
-										time = (fullS / p.scrollamount) * 1000;
+										time = (fullS / strWrap.data('scrollamount')) * 1000;
 									if (parseFloat(strMove.css('left')) != 0) {
 										fullS = (fullS + strWrap.width());
-										time = (fullS - (strWrap.width() - parseFloat(strMove.css('left')))) / p.scrollamount * 1000;
+										time = (fullS - (strWrap.width() - parseFloat(strMove.css('left')))) / strWrap.data('scrollamount') * 1000;
 									}
 									return time;
 								},
@@ -145,6 +154,10 @@
 										});
 									}
 								};
+								strWrap.data({
+									moveId: moveFuncId1	,
+									moveF : moveFunc1
+								})
 								if(!p.inverthover){
 									moveFunc1();
 								}
@@ -167,13 +180,16 @@
 										}
 										//drag
 										var dragLeft;
-										var dir;
+										var dir = 1;
 										var newX;
 										var oldX = e.clientX;
 										//drag
 										
 										strMoveLeft = strMove.position().left;
 										k1 = strMoveLeft - (e.clientX - strWrap.offset().left);
+										
+										
+										
 										$(this).on('mousemove', function (e) {
 											fMove = true;
 											
@@ -186,16 +202,33 @@
 											}
 											oldX = newX	
 											dragLeft = k1 + (e.clientX - strWrap.offset().left);
-											if(dragLeft < -strMove.width() && dir < 0){
-												dragLeft = 0;
-												strMoveLeft = strMove.position().left;
-												k1 = strMoveLeft - (e.clientX - strWrap.offset().left);
+											
+											if (!p.circular) {
+												if(dragLeft < -strMove.width() && dir < 0){
+													dragLeft = strWrap.width();
+													strMoveLeft = strMove.position().left;
+													k1 = strMoveLeft - (e.clientX - strWrap.offset().left);
+												}
+												if(dragLeft > strWrap.width() && dir > 0){
+													dragLeft = -strMove.width();
+													strMoveLeft = strMove.position().left;
+													k1 = strMoveLeft - (e.clientX - strWrap.offset().left);
+												}
+											}else{
+												if(dragLeft < -strMove.width() && dir < 0){
+													dragLeft = 0;
+													strMoveLeft = strMove.position().left;
+													k1 = strMoveLeft - (e.clientX - strWrap.offset().left);
+												}
+												if(dragLeft > 0 && dir > 0){
+													dragLeft = -strMove.width();
+													strMoveLeft = strMove.position().left;
+													k1 = strMoveLeft - (e.clientX - strWrap.offset().left);
+												}
+	
 											}
-											if(dragLeft > 0 && dir > 0){
-												dragLeft = -strMove.width();
-												strMoveLeft = strMove.position().left;
-												k1 = strMoveLeft - (e.clientX - strWrap.offset().left);
-											}
+											
+											
 											strMove.stop(true).css({
 												left: dragLeft
 											});
@@ -212,12 +245,13 @@
 												fMove = false
 											}, 50)
 											
-										}).on('click', function () {
-											if (fMove) {
-												return false
-											}
 										});
 										return false;
+									})
+									.on('click', function () {
+										if (fMove) {
+											return false
+										}
 									});
 								} else {
 									strWrap.addClass('no_drag');
@@ -232,7 +266,7 @@
 								strMoveLeft = strWrap.width(),
 									k1 = 0,
 									timeFunc = function () {
-										time = (strMove.width() + strMove.position().left) / p.scrollamount * 1000;
+										time = (strMove.width() + strMove.position().left) / strWrap.data('scrollamount') * 1000;
 										return time;
 									};
 								var moveFunc = function () {
@@ -251,6 +285,9 @@
 										}
 									});
 								};
+								strWrap.data({
+									moveF : moveFunc
+								})
 								if(!p.inverthover){
 									moveFunc();
 								}
@@ -269,19 +306,63 @@
 											if(p.inverthover){
 												strMove.stop(true);
 											}
+											
+											//drag
+											var dragLeft;
+											var dir = 1;
+											var newX;
+											var oldX = e.clientX;
+											//drag
+											
 											strMoveLeft = strMove.position().left;
 											k1 = strMoveLeft - (e.clientX - strWrap.offset().left);
 											$(this).on('mousemove', function (e) {
+												fMove = true;
+												
+												
+												//drag
+												newX = e.clientX;
+												if(newX > oldX){
+													dir = 1
+												}else{
+													dir = -1
+												}
+												oldX = newX	
+												dragLeft = k1 + (e.clientX - strWrap.offset().left);
+												
+												if(dragLeft < -strMove.width() && dir < 0){
+													dragLeft = strWrap.width();
+													strMoveLeft = strMove.position().left;
+													k1 = strMoveLeft - (e.clientX - strWrap.offset().left);
+												}
+												if(dragLeft > strWrap.width() && dir > 0){
+													dragLeft = -strMove.width();
+													strMoveLeft = strMove.position().left;
+													k1 = strMoveLeft - (e.clientX - strWrap.offset().left);
+												}
+												
+												
 												strMove.stop(true).css({
-													left: k1 + (e.clientX - strWrap.offset().left)
+													left: dragLeft
 												});
+												
+												
+												
 											}).on('mouseup', function () {
 												if(p.inverthover){
 													strMove.trigger('mouseenter')
 												}
 												$(this).off('mousemove');
+												setTimeout(function () {                             
+													fMove = false
+												}, 50)
 											});
 											return false;
+										})
+										.on('click', function () {
+											if (fMove) {
+												return false
+											}
 										});
 									} else {
 										strWrap.addClass('no_drag');
@@ -318,10 +399,10 @@
 							timeFunc = function () {
 								var
 								fullS = strWrap.width(), //крайняя точка
-									time = (fullS / p.scrollamount) * 1000; //время
+									time = (fullS / strWrap.data('scrollamount')) * 1000; //время
 								if (parseFloat(strMove.css('left')) != 0) {
 									fullS = (strMove.width() + strWrap.width());
-									time = (fullS - (strMove.width() + parseFloat(strMove.css('left')))) / p.scrollamount * 1000;
+									time = (fullS - (strMove.width() + parseFloat(strMove.css('left')))) / strWrap.data('scrollamount') * 1000;
 								}
 								return time;
 							};
@@ -343,6 +424,9 @@
 									});
 								};
 							};
+							strWrap.data({
+								moveF : moveFunc
+							})
 					
 							if(!p.inverthover){
 								moveFunc();
@@ -367,7 +451,7 @@
 										
 										//drag
 										var dragLeft;
-										var dir;
+										var dir = 1;
 										var newX;
 										var oldX = e.clientX;
 										//drag
@@ -376,7 +460,7 @@
 										k2 = strMoveLeft - (e.clientX - strWrap.offset().left);
 										$(this).on('mousemove', function (e) {
 											
-											
+											fMove = true;
 											
 											//drag
 											newX = e.clientX;
@@ -386,40 +470,67 @@
 												dir = -1
 											}
 											oldX = newX	
-											dragLeft = k2 + e.clientX - strWrap.offset().left
-											if(dragLeft < -strMove.width() && dir < 0){
-												dragLeft = 0;
-												strMoveLeft = strMove.position().left;
-												k2 = strMoveLeft - (e.clientX - strWrap.offset().left);
+											dragLeft = k2 + (e.clientX - strWrap.offset().left);
+
+
+											if (!p.circular) {
+
+												if(dragLeft < -strMove.width() && dir < 0){
+													dragLeft = strWrap.width();
+													strMoveLeft = strMove.position().left;
+													k2 = strMoveLeft - (e.clientX - strWrap.offset().left);
+												}
+												if(dragLeft > strWrap.width() && dir > 0){
+													dragLeft = -strMove.width();
+													strMoveLeft = strMove.position().left;
+													k2 = strMoveLeft - (e.clientX - strWrap.offset().left);
+												}
+											}else{
+												if(dragLeft < -strMove.width() && dir < 0){
+													dragLeft = 0;
+													strMoveLeft = strMove.position().left;
+													k2 = strMoveLeft - (e.clientX - strWrap.offset().left);
+												}
+												if(dragLeft > 0 && dir > 0){
+													dragLeft = -strMove.width();
+													strMoveLeft = strMove.position().left;
+													k2 = strMoveLeft - (e.clientX - strWrap.offset().left);
+												}
+	
 											}
-											if(dragLeft > 0 && dir > 0){
-												dragLeft = -strMove.width();
-												strMoveLeft = strMove.position().left;
-												k2 = strMoveLeft - (e.clientX - strWrap.offset().left);
-											}
+											
 											strMove.stop(true).css({
 												left: dragLeft
 											});
-											//drag
+											
 
-
+										}).on('mouseup', function () {
+											if(p.inverthover){
+												strMove.trigger('mouseenter')
+											}
+											$(this).off('mousemove');
+											setTimeout(function () {                             
+												fMove = false
+											}, 50)
 										});
 										return false;
-									}).on('mouseup', function () {
-										if(p.inverthover){
-											strMove.trigger('mouseenter')
+									})
+									.on('click', function () {
+										if (fMove) {
+											return false
 										}
-										$(this).off('mousemove');
 									});
 								} else {
 									strWrap.addClass('no_drag');
 								};
 							}
 						} else {
+														
 							if (p.runshort) {
+								
 								var k2 = 0;
 								var timeFunc = function () {
-									time = (strWrap.width() - strMove.position().left) / p.scrollamount * 1000;
+									time = (strWrap.width() - strMove.position().left) / strWrap.data('scrollamount') * 1000;
 									return time;
 								};
 								var moveFunc = function () {
@@ -439,6 +550,10 @@
 									});
 								};
 
+								strWrap.data({
+									moveF : moveFunc
+								})
+
 								if(!p.inverthover){
 									moveFunc();
 								}
@@ -457,19 +572,61 @@
 											if(p.inverthover){
 												strMove.stop(true);
 											}
+											
+											//drag
+											var dragLeft;
+											var dir = 1;
+											var newX;
+											var oldX = e.clientX;
+											//drag
+											
 											strMoveLeft = strMove.position().left;
 											k2 = strMoveLeft - (e.clientX - strWrap.offset().left);
 											$(this).on('mousemove', function (e) {
+												fMove = true;
+												
+												
+												
+												//drag
+												newX = e.clientX;
+												if(newX > oldX){
+													dir = 1
+												}else{
+													dir = -1
+												}
+												oldX = newX	
+												dragLeft = k2 + (e.clientX - strWrap.offset().left);
+												
+												if(dragLeft < -strMove.width() && dir < 0){
+													dragLeft = strWrap.width();
+													strMoveLeft = strMove.position().left;
+													k2 = strMoveLeft - (e.clientX - strWrap.offset().left);
+												}
+												if(dragLeft > strWrap.width() && dir > 0){
+													dragLeft = -strMove.width();
+													strMoveLeft = strMove.position().left;
+													k2 = strMoveLeft - (e.clientX - strWrap.offset().left);
+												}
+
 												strMove.stop(true).css({
-													left: k2 + e.clientX - strWrap.offset().left
+													left:dragLeft
 												});
+												
+											}).on('mouseup', function () {
+												if(p.inverthover){
+													strMove.trigger('mouseenter')
+												}
+												$(this).off('mousemove');
+												setTimeout(function () {                             
+													fMove = false
+												}, 50)
 											});
 											return false;
-										}).on('mouseup', function () {
-											if(p.inverthover){
-												strMove.trigger('mouseenter')
+										})
+										.on('click', function () {
+											if (fMove) {
+												return false
 											}
-											$(this).off('mousemove');
 										});
 									} else {
 										strWrap.addClass('no_drag');
@@ -501,10 +658,10 @@
 							timeFunc = function () {
 								var
 								fullS = Math.abs(topPos),
-									time = (fullS / p.scrollamount) * 1000;
+									time = (fullS / strWrap.data('scrollamount')) * 1000;
 								if (parseFloat(strMove.css('top')) != 0) {
 									fullS = (fullS + strWrap.height());
-									time = (fullS - (strWrap.height() - parseFloat(strMove.css('top')))) / p.scrollamount * 1000;
+									time = (fullS - (strWrap.height() - parseFloat(strMove.css('top')))) / strWrap.data('scrollamount') * 1000;
 								}
 								
 								return time;
@@ -526,6 +683,11 @@
 									});
 								};
 							};
+							
+							strWrap.data({
+								moveF : moveFunc
+							})
+							
 							if(!p.inverthover){
 								moveFunc();
 							}
@@ -547,7 +709,7 @@
 										
 										//drag
 										var dragTop;
-										var dir;
+										var dir = 1;
 										var newY;
 										var oldY = e.clientY;
 										//drag
@@ -557,27 +719,46 @@
 										k2 = strMoveTop - (e.clientY - strWrap.offset().top);
 										$(this).on('mousemove', function (e) {
 											
-											
-											
+											fMove = true;
+
 											//drag
 											newY = e.clientY;
 											if(newY > oldY){
 												dir = 1
 											}else{
-												dir = -1
+												if(newY < oldY){
+													dir = -1
+												}
 											}
 											oldY = newY	
-											dragTop = k2 + e.clientY - strWrap.offset().top
-											if(dragTop < -strMove.height() && dir < 0){
-												dragTop = 0;
-												strMoveTop = strMove.position().top;
-												k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+											dragTop = k2 + e.clientY - strWrap.offset().top;
+
+
+											if (!p.circular){
+												if(dragTop < -strMove.height() && dir < 0){
+													dragTop = strWrap.height();
+													strMoveTop = strMove.position().top;
+													k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+												}
+												if(dragTop > strWrap.height() && dir > 0){
+													dragTop = -strMove.height();
+													strMoveTop = strMove.position().top;
+													k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+												}	
+											}else{
+												if(dragTop < -strMove.height() && dir < 0){
+													dragTop = 0;
+													strMoveTop = strMove.position().top;
+													k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+												}
+												if(dragTop > 0 && dir > 0){
+													dragTop = -strMove.height();
+													strMoveTop = strMove.position().top;
+													k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+												}
 											}
-											if(dragTop > 0 && dir > 0){
-												dragTop = -strMove.height();
-												strMoveTop = strMove.position().top;
-												k2 = strMoveTop - (e.clientY - strWrap.offset().top);
-											}
+
+
 											strMove.stop(true).css({
 												top: dragTop
 											});
@@ -586,13 +767,29 @@
 											
 											
 											
+											
+											
+											
+											
+											
+											
+											
+											
+										}).on('mouseup', function () {
+											if(p.inverthover){
+												strMove.trigger('mouseenter')
+											}
+											$(this).off('mousemove');
+											setTimeout(function () {                             
+												fMove = false
+											}, 50)
 										});
 										return false;
-									}).on('mouseup', function () {
-										if(p.inverthover){
-											strMove.trigger('mouseenter')
+									})
+									.on('click', function () {
+										if (fMove) {
+											return false
 										}
-										$(this).off('mousemove');
 									});
 								} else {
 									strWrap.addClass('no_drag');
@@ -606,7 +803,7 @@
 								var k2 = 0;
 								var timeFunc = function () {
 									
-									time = (strMove.height() + strMove.position().top) / p.scrollamount * 1000;
+									time = (strMove.height() + strMove.position().top) / strWrap.data('scrollamount') * 1000;
 									
 									return time;
 								};
@@ -626,6 +823,9 @@
 										};
 									});
 								};
+								strWrap.data({
+									moveF : moveFunc
+								})
 								if(!p.inverthover){
 									moveFunc();
 								}
@@ -644,19 +844,65 @@
 											if(p.inverthover){
 												strMove.stop(true);
 											}
+											
+											//drag
+											var dragTop;
+											var dir = 1;
+											var newY;
+											var oldY = e.clientY;
+											//drag
+											
 											strMoveTop = strMove.position().top;
 											k2 = strMoveTop - (e.clientY - strWrap.offset().top);
 											$(this).on('mousemove', function (e) {
+												
+												
+												fMove = true;
+
+												//drag
+												newY = e.clientY;
+												if(newY > oldY){
+													dir = 1
+												}else{
+													if(newY < oldY){
+														dir = -1
+													}
+												}
+												oldY = newY	
+												dragTop = k2 + e.clientY - strWrap.offset().top;
+												
+												if(dragTop < -strMove.height() && dir < 0){
+													dragTop = strWrap.height();
+													strMoveTop = strMove.position().top;
+													k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+												}
+												if(dragTop > strWrap.height() && dir > 0){
+													dragTop = -strMove.height();
+													strMoveTop = strMove.position().top;
+													k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+												}	
+												//*drag
+												
 												strMove.stop(true).css({
-													top: k2 + e.clientY - strWrap.offset().top
+													top: dragTop
 												});
+												
+												
+											}).on('mouseup', function () {
+												if(p.inverthover){
+													strMove.trigger('mouseenter')
+												}
+												$(this).off('mousemove');
+												setTimeout(function () {                             
+													fMove = false
+												}, 50)
 											});
 											return false;
-										}).on('mouseup', function () {
-											if(p.inverthover){
-												strMove.trigger('mouseenter')
+										})
+										.on('click', function () {
+											if (fMove) {
+												return false
 											}
-											$(this).off('mousemove');
 										});
 									} else {
 										strWrap.addClass('no_drag');
@@ -692,11 +938,11 @@
 							timeFunc = function () {
 								var
 								fullS = strWrap.height(), //крайняя точка
-									time = (fullS / p.scrollamount) * 1000; //время
+									time = (fullS / strWrap.data('scrollamount')) * 1000; //время
 
 								if (parseFloat(strMove.css('top')) != 0) {
 									fullS = (strMove.height() + strWrap.height());
-									time = (fullS - (strMove.height() + parseFloat(strMove.css('top')))) / p.scrollamount * 1000;
+									time = (fullS - (strMove.height() + parseFloat(strMove.css('top')))) / strWrap.data('scrollamount') * 1000;
 								}
 								return time;
 							};
@@ -719,6 +965,9 @@
 									});
 								};
 							};
+							strWrap.data({
+								moveF : moveFunc
+							})
 							if(!p.inverthover){
 								moveFunc();
 							}
@@ -740,7 +989,7 @@
 										
 										//drag
 										var dragTop;
-										var dir;
+										var dir = 1;
 										var newY;
 										var oldY = e.clientY;
 										//drag
@@ -750,27 +999,46 @@
 										k2 = strMoveTop - (e.clientY - strWrap.offset().top);
 										$(this).on('mousemove', function (e) {
 											
-											
+											fMove = true;
 											
 											//drag
 											newY = e.clientY;
 											if(newY > oldY){
 												dir = 1
 											}else{
-												dir = -1
+												if(newY < oldY){
+													dir = -1
+												}
 											}
 											oldY = newY	
 											dragTop = k2 + e.clientY - strWrap.offset().top;
-											if(dragTop < -strMove.height() && dir < 0){
-												dragTop = 0;
-												strMoveTop = strMove.position().top;
-												k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+
+
+											if (!p.circular){
+												if(dragTop < -strMove.height() && dir < 0){
+													dragTop = strWrap.height();
+													strMoveTop = strMove.position().top;
+													k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+												}
+												if(dragTop > strWrap.height() && dir > 0){
+													dragTop = -strMove.height();
+													strMoveTop = strMove.position().top;
+													k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+												}	
+											}else{
+												if(dragTop < -strMove.height() && dir < 0){
+													dragTop = 0;
+													strMoveTop = strMove.position().top;
+													k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+												}
+												if(dragTop > 0 && dir > 0){
+													dragTop = -strMove.height();
+													strMoveTop = strMove.position().top;
+													k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+												}
 											}
-											if(dragTop > 0 && dir > 0){
-												dragTop = -strMove.height();
-												strMoveTop = strMove.position().top;
-												k2 = strMoveTop - (e.clientY - strWrap.offset().top);
-											}
+
+
 											strMove.stop(true).css({
 												top: dragTop
 											});
@@ -778,13 +1046,21 @@
 
 
 
+										}).on('mouseup', function () {
+											if(p.inverthover){
+												strMove.trigger('mouseenter')
+											}
+											$(this).off('mousemove');
+											setTimeout(function () {                             
+												fMove = false
+											}, 50)
 										});
 										return false;
-									}).on('mouseup', function () {
-										if(p.inverthover){
-											strMove.trigger('mouseenter')
+									})
+									.on('click', function () {
+										if (fMove) {
+											return false
 										}
-										$(this).off('mousemove');
 									});
 								} else {
 									strWrap.addClass('no_drag');
@@ -794,7 +1070,7 @@
 							if (p.runshort) {
 								var k2 = 0;
 								var timeFunc = function () {
-									time = (strWrap.height() - strMove.position().top) / p.scrollamount * 1000;
+									time = (strWrap.height() - strMove.position().top) / strWrap.data('scrollamount') * 1000;
 									return time;
 								};
 								var moveFunc = function () {
@@ -813,6 +1089,9 @@
 										};
 									});
 								};
+								strWrap.data({
+									moveF : moveFunc
+								})
 								if(!p.inverthover){
 									moveFunc();
 								}
@@ -831,19 +1110,70 @@
 											if(p.inverthover){
 												strMove.stop(true);
 											}
+											
+											//drag
+											var dragTop;
+											var dir = 1;
+											var newY;
+											var oldY = e.clientY;
+											//drag
+											
 											strMoveTop = strMove.position().top;
 											k2 = strMoveTop - (e.clientY - strWrap.offset().top);
 											$(this).on('mousemove', function (e) {
+												fMove = true;
+
+												//drag
+												newY = e.clientY;
+												if(newY > oldY){
+													dir = 1
+												}else{
+													if(newY < oldY){
+														dir = -1
+													}
+												}
+												oldY = newY	
+												dragTop = k2 + e.clientY - strWrap.offset().top;
+	
+	
+												if(dragTop < -strMove.height() && dir < 0){
+													dragTop = strWrap.height();
+													strMoveTop = strMove.position().top;
+													k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+												}
+												if(dragTop > strWrap.height() && dir > 0){
+													dragTop = -strMove.height();
+													strMoveTop = strMove.position().top;
+													k2 = strMoveTop - (e.clientY - strWrap.offset().top);
+												}	
+												//*drag
+												
 												strMove.stop(true).css({
-													top: k2 + e.clientY - strWrap.offset().top
+													top: dragTop
 												});
-											});
+												
+												
+												
+												
+												
+												
+												
+												
+											}).on('mouseup', function () {
+												if(p.inverthover){
+													strMove.trigger('mouseenter')
+												}
+												$(this).off('mousemove');
+												setTimeout(function () {                             
+													fMove = false
+												}, 50)
+											})
 											return false;
-										}).on('mouseup', function () {
-											if(p.inverthover){
-												strMove.trigger('mouseenter')
+										})
+										.on('click', function () {
+											if (fMove) {
+												return false
 											}
-											$(this).off('mousemove');
 										});
 									} else {
 										strWrap.addClass('no_drag');
@@ -892,8 +1222,10 @@
 					code();
 				}
 				strWrap.data({
-					ini:code	
+					ini:code,
+					startheight: startHeight	
 				})
+				
 				
 				
 				
@@ -906,7 +1238,64 @@
 			str_origin.stop(true);
 			str_move_clone.remove();
 			el.data('ini')();
+		},
+		destroy: function () {
+			
+			var el = $(this);
+			var elMove = $('.str_move',el);
+			var startHeight = el.data('startheight');
+			
+			$('.str_move_clone',el).remove();
+			el.off('mouseenter');
+			el.off('mousedown');
+			el.off('mouseup');
+			el.off('mouseleave');
+			el.off('mousemove');
+			el.removeClass('noStop').removeClass('str_vertical').removeClass('str_active').removeClass('no_drag').removeClass('str_static').removeClass('str_right').removeClass('str_down');
+			
+			var elStyle = el.attr('style'); 
+			if(elStyle){
+				var styleArr = elStyle.split(';');
+				for(var i=0; i < styleArr.length; i++){
+					var str = $.trim(styleArr[i]);
+					var tested =  str.search(/^height/g);
+					if(tested != -1){
+						styleArr[i] = '';	
+					}
+				}
+				var newArr = styleArr.join(';');
+				var newStyle =  newArr.replace(/;+/g,';')
+			
+				if(newStyle == ';'){
+					el.removeAttr('style');	
+				}else{
+					el.attr('style',newStyle);	
+				}
+				
+				if(startHeight){
+					el.css({height:startHeight})	
+				}
+			}
+			elMove.stop(true);
+
+			if(elMove.length){
+				var context = elMove.html();
+				elMove.remove();
+				el.html(context);
+			}
+	
+		},
+		pause: function(){	
+			var el = $(this);
+			var elMove = $('.str_move',el);
+			elMove.stop(true);
+		}, 
+		play: function(){
+			var el = $(this);
+			$(this).off('mousemove');
+			el.data('moveF')();	
 		}
+		
 	};
 	$.fn.liMarquee = function (method) {
 		if (methods[method]) {

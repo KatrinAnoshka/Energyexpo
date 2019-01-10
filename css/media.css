@@ -62,6 +62,9 @@
     #lang__menu ul li {
         background-color: transparent;
     }
+    .navigation.menu_state_open .menu__links {
+        top: 134px;
+    }
 
     /*Forum-section*/
 

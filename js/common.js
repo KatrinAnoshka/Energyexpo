@@ -54,70 +54,18 @@ $(document).ready(function() {
   /// click languages
   $("#lang__menu ul li").on("click", function(){
         //select lang and apply changes
-        $lang = $(this).text();
-        $("#lang__menu div").text($lang);
+        var lang = $(this).text();
+        $("#lang__menu div").text(lang);
   });
 
 
-/************* Home-page/////Slider-main-section *************/
 
-    $('.center').slick({
-        centerMode: true,
-        dots: true,
-        autoplay: true,
-        slidesToShow: 1,
-    });
-  
-/************** Home-page/////Sponsors-section **************/
 
-    $('.multiple-items').slick({
-        infinite: true,
-        dots: true,
-        autoplay: true,
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        responsive: [
-    {
-        breakpoint: 1400,
-        settings: {
-            slidesToShow: 5,
-            slidesToScroll: 1,    
-        }
-    },
-    {
-        breakpoint: 992,
-        settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1,    
-        }
-    },
-    {
-        breakpoint: 768,
-        settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,      
-        }
-    },
-    {
-        breakpoint: 550,
-        settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,     
-      }
-    }
-]
-  });
 
-/************* Review-page///Drop-down *************/
+/*************** Speakers hover-effect ***************/
 
-    $('.review__button').on('click', function() {
-        $(this).closest('.review__item').toggleClass('open');
-    });
-
-/*************** Donation-page///Drop-down ***************/
-
-    $('.payment-main').on('click', function() {
-        $('.payment-hidden').toggleClass('payment-display');
+    $('.speakers__slide').hover(function() {
+        $(this).children('.speakers__occupation').toggleClass('speakers__hover');
     });
           
 });
@@ -135,6 +83,30 @@ $(window).load(function() {
   });
 });
 
+$(window).load(function() {
+    $('.speakers__flexslider').flexslider({
+        animation: "slide",
+        prevText: "",
+        nextText: "",
+        touch: true,
+        itemWidth: 270,
+        minItems: 4,
+        maxItems: 4,
+        // itemMargin: 5
+    });
+});
+
 $(window).load(function(){
-    $('.str').liMarquee();
+    $('.str').liMarquee({
+        // runshort: true,
+        // scrollAmount: 25,
+        // circular: true,
+        // scrollamount: 250
+            direction: 'left',  
+            loop:-1,            
+            scrolldelay: 0,     
+            scrollamount:200,   
+            circular: true,     
+            drag: true          
+    });
 });
