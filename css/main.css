@@ -45,6 +45,16 @@ input,
 
 .header {
 	padding: 30px 20px;
+	background: #fff;
+	width: 100%;
+}
+.header__fixed {
+    position: fixed;
+    padding: 5px 20px;
+    top: 0;
+   	box-shadow: 0 0 10px rgb(255, 255, 255);
+    z-index: 1000;
+    transition: all .5s ease-in-out;
 }
 .header__wrap {
 	width: 1150px;
@@ -281,7 +291,7 @@ input,
 }
 #lang__menu ul li a:hover {  
   	cursor: pointer;
-  	color: #acccfd;
+  	color: #932210;
 }
 
 /*************Forum-section*************/
@@ -390,6 +400,7 @@ a.button__red:hover {
 }
 h2.h2__subtitle {
     font-size: 2.375em;
+    font-weight: 500;
     color: rgb(30, 33, 50);
     line-height: 1.2;
     text-align: center;
@@ -736,9 +747,9 @@ a.button__topics {
     transform: translateY(-50%);
 }
 
-/*str=========================*/
+/*Бегущая строка*/
 
-.str {
+/*.str {
     border-radius: 10px;
   background-color: rgb(255, 255, 255);
   max-width: 1170px;
@@ -746,7 +757,7 @@ a.button__topics {
   height: 92px !important;
     margin: 75px auto 0;
     padding: 20px 0;
-}
+}*/
 .str_move {
      top: 50%;
     transform: translateY(-50%);
@@ -761,6 +772,36 @@ a.button__topics {
 }
 .str img:hover {
     opacity:1;
+}
+
+.scroller__wrapper { 
+	overflow: hidden; 
+	position: relative; 
+	 border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  max-width: 1170px;
+  width: 100%;
+  height: 92px;
+    margin: 75px auto 0;
+    padding: 20px 0;
+}
+ul.scroller { 
+	position: relative; 
+	white-space: nowrap; 
+	font-size: 0; 
+}
+ul.scroller li { 
+	display: inline-block; 
+	white-space: normal; 
+	vertical-align: middle; 
+	padding: 10px; 
+}
+ul.scroller li img {
+	 max-width: 180px;
+    width: 100%;
+    height: auto;
+    margin-right: 20px;
+  
 }
 
 /*Greeting-section*/
@@ -1198,5 +1239,138 @@ a.button__news {
 	font-size: 16px; 
 	font-weight: bold;
 }*/
+
+/*Contacts-section*/
+
+.contacts {
+	width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-color: #fff;
+    position: relative;
+}
+.contacts__wrap {
+	width: 1210px;
+    max-width: 100%;
+    padding: 100px 20px;
+    margin: auto;
+ display: -webkit-flex;
+ display: -moz-flex;
+ display: -ms-flex;
+ display: -o-flex;
+ display: flex;
+ -webkit-flex-direction: column;
+ -moz-flex-direction: column;
+ -ms-flex-direction: column;
+ -o-flex-direction: column;
+ flex-direction: column;
+ justify-content: flex-start;
+}
+h2.contacts__subtitle {
+	text-align: left;
+	padding-left: 0;
+	margin-top: 0;
+}
+.contacts__icons {
+	padding: 45px 0;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+.contacts__icon {
+	background-image: url(../img/contacts/icon.png);
+	width: 40px;
+	height: 39px;
+	margin-right: 10px;
+	position: relative;
+	cursor: pointer;
+	transition: background-image .5s ease-out;
+}
+.contacts__icon:hover {
+	background-image: url(../img/contacts/icon-hover.png);
+}
+.contacts__img {
+	position: absolute;
+	width: 19px;
+	height: 19px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.contacts__desc {
+  font-size: 1.375em;
+  font-weight: 600;
+  font-family: "Roboto Regular";
+  color: rgb(30, 33, 50);
+  line-height: 1.409;
+  margin-bottom: 5px;
+}
+.contacts__link {
+	font-family: "Roboto Medium";
+	font-weight: 300;
+	color: #1e2132;
+}
+.contacts__link-hover:hover {
+	color: #871c0c;
+}
+a.button__contacts {
+	width: 150px;
+	height: 50px;
+	line-height: 2.75;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin-top: 45px;
+}
+
+/*Footer*/
+
+.footer {
+	background-image: url(../img/footer-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* background-attachment: fixed; */
+    width: 100%;
+    max-width: 1920px;
+    height: 80;
+    margin: auto;
+}
+.footer__wrap {
+	width: 840px;
+    max-width: 100%;
+    padding: 20px;
+    margin: auto;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -ms-align-items: center;
+    align-items: center;
+    color: #fff;
+}
+.footer__copy {
+	font-size: 1em;
+	font-family: "Roboto Regular";
+	margin-bottom: 7px;
+}
+.footer__text {
+	font-size: 0.75em;
+	font-family: "Roboto Light";
+}
+.footer__link {
+	color: #fff;
+}
+.footer__link:hover {
+	text-decoration: underline;
+}
+
 
 

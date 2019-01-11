@@ -2,19 +2,33 @@ $(document).ready(function() {
 
 /*************** Adaptive menu ***************/
 
+    $('.menu__icon').on('click', function() {
+        $(this).closest('.navigation').toggleClass('menu_state_open');
+    });
 
-            $('.menu__icon').on('click', function() {
-                $(this).closest('.navigation').toggleClass('menu_state_open');
-            });
+/************* Fixed menu *************/
 
+    if ($(window).width() > 1200)   {
+        $(window).scroll(function () {
+            var scrolled = $(window).scrollTop();
+            if (scrolled >= 1) {
+                $('header').addClass('header__fixed');                      
+            }
+            else {
+                if (scrolled < 180) {
+                    $('header').removeClass('header__fixed');                                   
+                }
+            }
+        });
+    }
 
-
+/************* Search animation in header *************/
 
     $('.header__wrap .search__form').mouseover(function() {
         var width = $('#lang__menu').outerWidth();
         $('.header__wrap .search__form span').stop().animate({
         width: width + 'px',
-      }, 500, function() {
+        }, 500, function() {
             $('.header__wrap .search__form span').css({'overflow': 'visible'});
         });
     });
@@ -24,7 +38,7 @@ $(document).ready(function() {
             return false;
         $('.header__wrap .search__form span').stop().animate({
         width: '0',
-      }, 500, function() {
+        }, 500, function() {
             $('.search__result').html('');
         });
     });
@@ -32,58 +46,83 @@ $(document).ready(function() {
     $('.header__wrap .search__form input').blur(function() { 
         $('.header__wrap .search__form span').stop().animate({
         width: '0',
-      }, 500, function() {
+        }, 500, function() {
             $('.search__result').html('');
         });
     });
 
+/************* Switch language animation in header *************/
 
- ///hover container lang menu
-  $("#lang__menu").hover(
-    function(){
-       
-        $(this).children().eq(0);
-              $("#lang__menu ul").stop().slideToggle(100);
-    },
-    function(){
-               
-        $(this).children().eq(0);
-        $("#lang__menu ul").stop().slideToggle(100);  
-    }
-  );
-  /// click languages
-  $("#lang__menu ul li").on("click", function(){
-        //select lang and apply changes
+    $("#lang__menu").hover(
+        function(){          
+            $(this).children().eq(0);
+            $("#lang__menu ul").stop().slideToggle(100);
+        },
+    );
+
+    $("#lang__menu ul li").on("click", function(){
         var lang = $(this).text();
         $("#lang__menu div").text(lang);
-  });
-
-
-
-
+    });
 
 /*************** Speakers hover-effect ***************/
 
     $('.speakers__slide').hover(function() {
         $(this).children('.speakers__occupation').toggleClass('speakers__hover');
     });
-          
-});
 
-    /* Flexslider */
+/*************** News ticker in Support section ***************/ 
+
+    var speed = 10;
+    var items, scroller = $('.scroller');
+    var width = 0;
+    scroller.children().each(function(){
+        width += $(this).outerWidth(true);
+    });
+    scroller.css('width', width);
+    scroll();
+    function scroll(){
+        items = scroller.children();
+        var scrollWidth = items.eq(0).outerWidth();
+        scroller.animate({'left' : 0 - scrollWidth}, scrollWidth * 100 / speed, 'linear', changeFirst);
+    }
+    function changeFirst(){
+        scroller.append(items.eq(0).remove()).css('left', 0);
+        scroll();
+    }
+
+/*************** Chrome Smooth Scroll ***************/         
+
+    try {
+        $.browserSelector();
+        if($("html").hasClass("chrome")) {
+            $.smoothScroll();
+        }
+    } catch(err) {
+    };
+
+    $("img, a").on("dragstart", function(event) { event.preventDefault(); }); 
+
+
+}); /*  end of Document Ready*/
+
     
 $(window).load(function() {
-  $('.forum__flexslider').flexslider({
-    animation: "slide",
-    touch: true,
-    controlNav: false,
-    directionNav: false,
-    minItems: 1,
-    maxItems: 1
-  });
-});
 
-$(window).load(function() {
+/*************** Slider in Forum section ***************/ 
+
+    $('.forum__flexslider').flexslider({
+        animation: "slide",
+        slideshowSpeed: 2000,
+        touch: true,
+        controlNav: false,
+        directionNav: false,
+        minItems: 1,
+        maxItems: 1
+    });
+
+/*************** Slider in Speakers section ***************/ 
+
     $('.speakers__flexslider').flexslider({
         animation: "slide",
         prevText: "",
@@ -92,21 +131,9 @@ $(window).load(function() {
         itemWidth: 270,
         minItems: 4,
         maxItems: 4,
-        // itemMargin: 5
     });
-});
 
-$(window).load(function(){
-    $('.str').liMarquee({
-        // runshort: true,
-        // scrollAmount: 25,
-        // circular: true,
-        // scrollamount: 250
-            direction: 'left',  
-            loop:-1,            
-            scrolldelay: 0,     
-            scrollamount:200,   
-            circular: true,     
-            drag: true          
-    });
-});
+
+}); /*  end of Window Load*/
+
+
