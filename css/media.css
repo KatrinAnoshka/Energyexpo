@@ -37,7 +37,7 @@
         margin-bottom: 20px;
     }
     .programm__item {
-        width: 50%;
+        width: 33%;
         margin-bottom: 40px;
     }
 
@@ -66,10 +66,11 @@
     /*.programm__items{
         margin-bottom: 20px;
     }*/
-    .programm__item {
-        width: 80%;
-        /*margin-bottom: 40px;*/
+      .programm__item {
+        width: 50%;
+      
     }
+    
 
 }
 
@@ -118,7 +119,11 @@
         line-height: 1.25;
     }
     .programm__item:last-child {
-        margin-bottom: 20px;
+        /*margin-bottom: 20px;*/
+    }
+     .programm__item {
+        width: 100%;
+      
     }
 
     /*Contacts-section*/

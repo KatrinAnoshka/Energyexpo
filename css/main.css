@@ -386,7 +386,7 @@ h2.h2__subtitle {
     line-height: 1.2;
     text-align: center;
     padding: 0 20px;
-    margin-top: 115px;
+    padding-top: 115px;
 }
 .topics__wrap {
     width: 1225px;
@@ -401,6 +401,8 @@ h2.h2__subtitle {
     -ms-align-items: flex-start;
     align-items: flex-start;
     justify-content: space-between;
+    z-index: 5;
+    position: relative;
 }
 .topics__img {
     width: 500px;
@@ -501,13 +503,12 @@ a.button__topics {
 .particle-network-animation {
     position: absolute;
     overflow: hidden;
-    width: 450px;  
+    width: 100%;  
     background-color: rgba(255, 255, 255, 0);
-}
-.topics .particle-network-animation {
-    top: -115px;
-    right: 0;
-    height: 960px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 0;
 }
 
 /************************ Participants-section ************************/
@@ -669,6 +670,8 @@ ul.scroller li img {
 }
 .greeting__wrap {
 	padding: 100px 20px 120px;
+	z-index: 5;
+    position: relative;
 }
 .greeting .h2__subtitle {
 	margin-top: 0;
@@ -710,11 +713,6 @@ ul.scroller li img {
   	-webkit-clip-path: url(#greeting__clip);
   	clip-path: url(#greeting__clip);
   	width: 400px;
-}
-.greeting .particle-network-animation {
-    top: -115px;
-    right: 0;
-    height: 960px;
 }
 
 /***************** Speakers-section *****************/
@@ -860,10 +858,12 @@ h2.speakers__subtitle {
     justify-content: center;
     -ms-align-items: center;
     align-items: center;
+    z-index: 5;
+    position: relative;
 }
 h2.programm__subtitle {
 	font-size: 2.375em;
-  	margin-top: 0;
+  	padding-top: 0;
  	text-align: center;
 }
 .programm__items {
@@ -890,7 +890,8 @@ h2.programm__subtitle {
 	-o-flex-direction: column;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding-right: 25px;
+	padding: 2%;
+	width: 25%;
 }
 .programm__item:last-child {
 	padding-right: 0;
@@ -934,11 +935,6 @@ a.button__programm {
     font-weight: 300;
     padding-top: 6px;
 }
-.programm .particle-network-animation {
-    top: -115px;
-    right: 0;
-    height: 960px;
-}
 
 /****************** News-section ******************/
 
@@ -959,7 +955,7 @@ a.button__programm {
 }
 h2.news__subtitle {
 	font-size: 2.375em;
-  	margin-top: 0;
+  	padding-top: 0;
  	text-align: center;
 }
 .news__items {
@@ -1105,11 +1101,13 @@ a.button__news {
  	-o-flex-direction: column;
  	flex-direction: column;
  	justify-content: flex-start;
+ 	z-index: 5;
+    position: relative;
 }
 h2.contacts__subtitle {
 	text-align: left;
 	padding-left: 0;
-	margin-top: 0;
+	padding-top: 0;
 }
 .contacts__icons {
 	padding: 45px 0;

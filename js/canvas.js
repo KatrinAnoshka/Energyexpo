@@ -307,7 +307,10 @@ $(document).ready(function() {
 
 pna = new ParticleNetworkAnimation();   
 
-pna.init($('.particle-network-animation')[0]);
+pna.init($('.topics__network')[0]);
+pna.init($('.programm__network')[0]);
+pna.init($('.greeting__network')[0]);
+pna.init($('.contacts__network')[0]);
 
 }());
 
