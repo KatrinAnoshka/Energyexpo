@@ -40,6 +40,13 @@ input,
 .button:active {
 	outline: none;
 }
+.clip__form {
+	fill: none;
+	stroke: #fff;
+	stroke-miterlimit: 10;
+	opacity: 0;
+}
+/*Проверить надо ли clip form*!@!!!!!!!!!!!!!!!!!/
 
 /************** Header-section **************/
 
