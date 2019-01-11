@@ -26,6 +26,21 @@
         flex-direction: column-reverse;
     }
 
+/************ Programm-section ************/
+
+    .programm__items{
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+    .programm__item {
+        width: 50%;
+        margin-bottom: 40px;
+    }
+
 }
 /* Medium Devices, Desktops */
 
@@ -46,6 +61,15 @@
 
 @media only screen and (max-width: 768px) {
 
+/************ Programm-section ************/
+
+    /*.programm__items{
+        margin-bottom: 20px;
+    }*/
+    .programm__item {
+        width: 80%;
+        /*margin-bottom: 40px;*/
+    }
 
 }
 
@@ -66,10 +90,45 @@
         top: 134px;
     }
 
+    
+
+    .forum__wrap,
+    .support__wrap,
+    .programm__wrap,
+    .contacts__wrap {
+        padding: 60px 10px;
+    }
+
     /*Forum-section*/
 
-    .forum__wrap {
-        padding: 60px 10px;
+    a.button__forum {
+        line-height: 4.4;
+    }
+
+/************ Support-section ************/
+
+    .scroller__wrapper,
+    .programm__items {
+        margin-top: 40px;
+    }
+
+/* Programm-section */
+    a.button__programm {
+        font-size: 18px;
+        line-height: 1.25;
+    }
+    .programm__item:last-child {
+        margin-bottom: 20px;
+    }
+
+    /*Contacts-section*/
+
+    .contacts__icons {
+        padding: 30px 0;
+    }
+    a.button__contacts {
+        margin-top: 30px;
+        line-height: 3.75;
     }
 }   
 
@@ -91,6 +150,40 @@
 
     body {
         font-size: 10px;
+    }
+
+/******* Header-section *******/
+
+    #lang__menu:after {
+        background-size: 99%;
+        width: 10px;
+        height: 8px;
+        top: 12px;
+        right: 37px;
+    }
+
+/********* Forum-section *********/
+
+    a.button__forum {
+        font-size: 13.5px;
+    }    
+
+/************ Programm-section ************/
+
+    .programm__item {
+        width: 100%;
+    }    
+
+    /*Contacts-section*/
+
+    a.button__contacts {
+        font: 13.2px;
+    }
+
+    /*Footer-section*/
+
+    .footer__text {
+        font-size: 9px;
     }
 
 }

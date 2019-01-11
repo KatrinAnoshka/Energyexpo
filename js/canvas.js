@@ -305,7 +305,9 @@ $(document).ready(function() {
         return array[Math.floor(Math.random()*array.length)];
     };
 
-pna = new ParticleNetworkAnimation();   pna.init($('.particle-network-animation')[0]);
+pna = new ParticleNetworkAnimation();   
+
+pna.init($('.particle-network-animation')[0]);
 
 }());
 
