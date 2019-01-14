@@ -122,15 +122,23 @@ $(window).load(function() {
     });
 
 /*************** Slider in Speakers section ***************/ 
-
+    if ($('.speakers').width() > 1200) {
+        var countItem = 4;
+    } else if ($('.speakers').width() > 768) {
+        var countItem = 3;
+    } else if ($('.speakers').width() > 550) {
+        var countItem = 2;
+    } else {
+        var countItem = 1;
+    }
     $('.speakers__flexslider').flexslider({
         animation: "slide",
         prevText: "",
         nextText: "",
         touch: true,
-        itemWidth: 270,
-        minItems: 4,
-        maxItems: 4,
+        itemWidth: 250,
+        minItems: 1,
+        maxItems: countItem,
     });
 
 
