@@ -34,6 +34,13 @@ input,
 .button:active {
 	outline: none;
 }
+.wrap {
+    max-width: 100%;
+    padding: 8% 1.5%;
+    margin: auto;
+    z-index: 5;
+    position: relative;
+}
 
 /*********************** Header-section ***********************/
 
@@ -302,10 +309,7 @@ input,
 }
 .forum__wrap {
 	width: 840px;
-    max-width: 100%;
-    padding: 115px 20px 120px;
-    margin: auto;
-    display: -webkit-flex;
+	display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
@@ -386,26 +390,36 @@ h2.h2__subtitle {
     line-height: 1.2;
     text-align: center;
     padding: 0 20px;
-    padding-top: 115px;
 }
 .topics__wrap {
     width: 1225px;
-    max-width: 100%;
-    padding: 70px 20px 140px;
-    margin: auto;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
     display: flex;
-    -ms-align-items: flex-start;
-    align-items: flex-start;
-    justify-content: space-between;
-    z-index: 5;
-    position: relative;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+.topics__main {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: flex-start;
+	align-items: flex-start;
+	padding-top: 5%;
 }
 .topics__img {
-    width: 500px;
+    width: 45%;
 }
 .topics__descr {
     display: -webkit-flex;
@@ -624,10 +638,7 @@ a.button__topics {
     max-width: 1920px;
     height: auto;
     margin: auto;
-}
-.support__wrap {
-    padding: 100px 20px;
-}
+}   
 .support__subtitle {
     padding: 0 10px;
 }
@@ -641,9 +652,10 @@ a.button__topics {
   	background-color: rgb(255, 255, 255);
   	max-width: 1170px;
   	width: 100%;
-  	height: 92px;
-    margin: 75px auto 0;
-    padding: 20px 0;
+  	height: auto;
+  	max-height: 92px;
+    margin: 6% auto 0;
+    padding: 1.5% 0;
 }
 ul.scroller { 
 	position: relative; 
@@ -668,11 +680,6 @@ ul.scroller li img {
 .greeting {
 	position: relative;
 }
-.greeting__wrap {
-	padding: 100px 20px 120px;
-	z-index: 5;
-    position: relative;
-}
 .greeting .h2__subtitle {
 	margin-top: 0;
 }
@@ -680,7 +687,7 @@ ul.scroller li img {
 	max-width: 1210px;
 	width: 100%;
 	margin: auto;
-	padding: 50px 20px 0;
+	padding: 4% 1.5% 0;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -705,14 +712,19 @@ ul.scroller li img {
 	align-self: flex-end;
 }
 .greeting__img {
-	width: 400px;
-	height: 400px;
-	margin-bottom: 35px;
+	padding-bottom: 3.5%;
+}
+.clip__svg {
+	width: 0;
+	height: 0;
 }
 .greeting__photo {
-  	-webkit-clip-path: url(#greeting__clip);
-  	clip-path: url(#greeting__clip);
-  	width: 400px;
+	max-width: 400px;
+	max-height: 400px;
+	width: 100%;
+	height: auto;
+	-webkit-clip-path: url("#greeting__photo");
+	clip-path: url("#greeting__photo");
 }
 
 /***************** Speakers-section *****************/
@@ -728,11 +740,7 @@ ul.scroller li img {
     margin: auto;
 }
 .speakers__wrap {
-	max-width: 1210px;
-	width: 100%;
-	height: auto;
-	padding: 120px 20px 100px;
-	margin: auto;
+	width: 1210px;
 }
 h2.speakers__subtitle {
 	font-size: 2.375em;
@@ -742,7 +750,7 @@ h2.speakers__subtitle {
 .speakers__flexslider {
 	background: transparent; 
     border: none;
-    margin-top: 90px;
+    margin-top: 8%;
 }
 .speakers__flexslider .speakers__img {
 	width: 270px;
@@ -835,16 +843,13 @@ h2.speakers__subtitle {
 
 .programm {
 	width: 100%;
-    max-width: 100%;
+    max-width: 1920px;
     height: auto;
     background-color: #fff;
     position: relative;
 }
 .programm__wrap {
 	width: 1210px;
-    max-width: 100%;
-    padding: 125px 20px 120px;
-    margin: auto;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -858,8 +863,6 @@ h2.speakers__subtitle {
     justify-content: center;
     -ms-align-items: center;
     align-items: center;
-    z-index: 5;
-    position: relative;
 }
 h2.programm__subtitle {
 	font-size: 2.375em;
@@ -867,16 +870,13 @@ h2.programm__subtitle {
  	text-align: center;
 }
 .programm__items {
-	margin-top: 80px;
-	margin-bottom: 90px;
+	margin: 5% 0;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
 	justify-content: center;
-	-ms-align-items: center;
-	align-items: center;
 }
 .programm__item {
 	display: -webkit-flex;
@@ -890,11 +890,8 @@ h2.programm__subtitle {
 	-o-flex-direction: column;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding: 2%;
+	padding: 1.5%;
 	width: 25%;
-}
-.programm__item:last-child {
-	padding-right: 0;
 }
 .programm__data {
   	font-size: 1.875em; 
@@ -912,6 +909,9 @@ h2.programm__subtitle {
 }
 .programm__item:hover .programm__line {
 	background-image: url(../img/programm/line-hover.png);
+}
+.programm__item:hover .programm__data {
+	color: #e31e24;
 }
 .programm__title {
   	font-size: 1.1875em;
@@ -947,11 +947,7 @@ a.button__programm {
     margin: auto;
 }
 .news__wrap {
-	max-width: 1210px;
-	width: 100%;
-	height: auto;
-	padding: 120px 20px 80px;
-	margin: auto;
+	width: 1210px;
 }
 h2.news__subtitle {
 	font-size: 2.375em;
@@ -965,7 +961,7 @@ h2.news__subtitle {
 	display: -o-flex;
 	display: flex;
 	justify-content: space-between;
-	margin-top: 60px;
+	margin-top: 5%;
 }
 .news__item {
 	display: -webkit-flex;
@@ -1035,7 +1031,7 @@ a.button__news {
 /*********================= Pagination *********/
 
 .pagination {
-	padding: 70px 20px 0; 
+	padding: 6% 1.5% 0; 
 	clear: both;
 	position: relative;
     z-index: 1;
@@ -1087,9 +1083,6 @@ a.button__news {
 }
 .contacts__wrap {
 	width: 1210px;
-    max-width: 100%;
-    padding: 100px 20px;
-    margin: auto;
  	display: -webkit-flex;
  	display: -moz-flex;
  	display: -ms-flex;
@@ -1101,8 +1094,6 @@ a.button__news {
  	-o-flex-direction: column;
  	flex-direction: column;
  	justify-content: flex-start;
- 	z-index: 5;
-    position: relative;
 }
 h2.contacts__subtitle {
 	text-align: left;
@@ -1110,7 +1101,7 @@ h2.contacts__subtitle {
 	padding-top: 0;
 }
 .contacts__icons {
-	padding: 45px 0;
+	padding: 4% 0;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -1144,6 +1135,7 @@ h2.contacts__subtitle {
   	color: rgb(30, 33, 50);
   	line-height: 1.409;
   	margin-bottom: 5px;
+  	padding-right: 10px;
 }
 .contacts__link {
 	font-family: "Roboto Medium";
@@ -1159,7 +1151,7 @@ a.button__contacts {
 	line-height: 2.75;
 	font-weight: 400;
 	text-transform: uppercase;
-	margin-top: 45px;
+	margin-top: 4%;
 }
 
 /******************** Footer ********************/
@@ -1177,7 +1169,7 @@ a.button__contacts {
 .footer__wrap {
 	width: 840px;
     max-width: 100%;
-    padding: 20px;
+    padding: 1.5%;
     margin: auto;
     display: -webkit-flex;
     display: -moz-flex;

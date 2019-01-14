@@ -74,7 +74,7 @@
 
 		<section class="forum">
 			
-			<div class="forum__wrap">
+			<div class="forum__wrap  wrap">
 
 				<h1 class="title">Белорусский энергетический и экологический форум</h1>
 
@@ -106,47 +106,49 @@
 
 		<section class="topics">
 			
-			<h2 class="h2__subtitle">Тематика форума</h2>
+			<div class="topics__wrap wrap">
 
-			<div class="topics__wrap">
-				<img src="img/topics/logo-topics.png" alt="logo" class="topics__img">
+				<h2 class="h2__subtitle">Тематика форума</h2>
 
-				<div class="topics__descr">
-					<div class="topics__items topics__top">
-						<div class="topics__item">
-							<div class="topics__bg"></div>
-							<img src="img/topics/form.png" alt="form" class="topics__form">
-							<img src="img/topics/logo-1.png" alt="logo" class="topics__logo">
+				<div class="topics__main">
+					<img src="img/topics/logo-topics.png" alt="logo" class="topics__img">
+
+					<div class="topics__descr">
+						<div class="topics__items topics__top">
+							<div class="topics__item">
+								<div class="topics__bg"></div>
+								<img src="img/topics/form.png" alt="form" class="topics__form">
+								<img src="img/topics/logo-1.png" alt="logo" class="topics__logo">
+							</div>
+							<div class="topics__item">
+								<div class="topics__bg"></div>
+								<img src="img/topics/form.png" alt="form" class="topics__form">
+								<img src="img/topics/logo-2.png" alt="logo" class="topics__logo">
+							</div>
+							<div class="topics__item">
+								<div class="topics__bg"></div>
+								<img src="img/topics/form.png" alt="form" class="topics__form">
+								<img src="img/topics/logo-3.png" alt="logo" class="topics__logo">
+							</div>
 						</div>
-						<div class="topics__item">
-							<div class="topics__bg"></div>
-							<img src="img/topics/form.png" alt="form" class="topics__form">
-							<img src="img/topics/logo-2.png" alt="logo" class="topics__logo">
+						<div class="topics__items topics__bottom">	
+							<div class="topics__item">
+								<div class="topics__bg"></div>
+								<img src="img/topics/form.png" alt="form" class="topics__form">
+								<img src="img/topics/logo-4.png" alt="logo" class="topics__logo">
+							</div>
+							<div class="topics__item">
+								<div class="topics__bg"></div>
+								<img src="img/topics/form.png" alt="form" class="topics__form">
+								<img src="img/topics/logo-5.png" alt="logo" class="topics__logo">
+							</div>
 						</div>
-						<div class="topics__item">
-							<div class="topics__bg"></div>
-							<img src="img/topics/form.png" alt="form" class="topics__form">
-							<img src="img/topics/logo-3.png" alt="logo" class="topics__logo">
-						</div>
+					
+						<p class="topics__subtitle">Energy Expo</p>
+						<p class="topics__text">Текст по умолчанию про выставку Energy Expo. Текст по умолчанию про выставку Energy Expo. Текст по умолчанию про выставку Energy Expo. Текст по умолчанию про выставку Energy Expo. Текст по умолчанию про выставку Energy Expo. Текст по умолчанию про выставку Energy Expo. Текст по умолчанию про выставку Energy Expo. </p>
+						<a href="#" class="button button__blue button__topics">Подробнее</a>
 					</div>
-					<div class="topics__items topics__bottom">	
-						<div class="topics__item">
-							<div class="topics__bg"></div>
-							<img src="img/topics/form.png" alt="form" class="topics__form">
-							<img src="img/topics/logo-4.png" alt="logo" class="topics__logo">
-						</div>
-						<div class="topics__item">
-							<div class="topics__bg"></div>
-							<img src="img/topics/form.png" alt="form" class="topics__form">
-							<img src="img/topics/logo-5.png" alt="logo" class="topics__logo">
-						</div>
-					</div>
-				
-					<p class="topics__subtitle">Energy Expo</p>
-					<p class="topics__text">Текст по умолчанию про выставку Energy Expo. Текст по умолчанию про выставку Energy Expo. Текст по умолчанию про выставку Energy Expo. Текст по умолчанию про выставку Energy Expo. Текст по умолчанию про выставку Energy Expo. Текст по умолчанию про выставку Energy Expo. Текст по умолчанию про выставку Energy Expo. </p>
-					<a href="#" class="button button__blue button__topics">Подробнее</a>
-				</div>
-
+				</div><!-- /end of Topics__main -->
 
 			</div><!-- /end of Topics__wrap -->
 
@@ -210,7 +212,7 @@
 <!--************************** Support-section **************************-->
 
 		<section class="support">
-			<div class="support__wrap">
+			<div class="support__wrap wrap">
 
 				<h3 class="h3__subtitle support__subtitle">Информационная поддержка</h3>
 		
@@ -233,22 +235,24 @@
 <!--************************** Greeting-section **************************-->
 
 		<section class="greeting">
-			<div class="greeting__wrap">
+			<div class="greeting__wrap wrap">
 
 				<h2 class="h2__subtitle">Приветствие участникам форума</h2>
 
 				<div class="greeting__item">
 
-					<div class="greeting__img">
-						<img class="greeting__photo" src="img/greeting/photo-1.jpg" alt="photo">
-						<svg width="0%" height="0%">
-						  	<defs>
-						    	<clipPath id="greeting__clip">
-						  		<path id="clip__form" d="M335.59,315.32Q215.14,454.8,75.2,334.6T55.71,74.93Q176.16-64.55,316.09,55.64T335.59,315.32Z" transform="translate(0.51 0.49)"/>
-						    	</clipPath>
-						  	</defs>
-						</svg>
-					</div>
+					<div class="greeting__img">	
+		  				<div class="greeting__img-wrap">
+				  			<img src="img/greeting/photo-1.jpg" alt="photo" class="greeting__photo">			
+						</div>
+        				<svg class="clip__svg">
+          					<defs>
+            					<clipPath id="greeting__photo" clipPathUnits="objectBoundingBox" transform="scale(0.00255, 0.00255)">
+									<path d="M335.59,315.32Q215.14,454.8,75.2,334.6T55.71,74.93Q176.16-64.55,316.09,55.64T335.59,315.32Z" />
+            					</clipPath>
+          					</defs>
+        				</svg>			
+    				</div>
 
 					<p class="greeting__text">«Цифровая трансформация — это не только экономика, а глобальное явление, которое влияет на всю нашу жизнь. Она затрагивает и государственное управление, и задаёт новые методы ведения бизнеса, и меняет наши повседневные практики, будь то поход за покупками, оформление документов или досуг. Форум «Открытые инновации» — это уникальная площадка, где представители власти, науки, бизнеса смогут не только обсудить различные аспекты цифровизации самых разных сфер, но и прийти к конкретным решениям и проектам, пониманию, что необходимо сделать для инновационного развития нашей страны как участницы глобального мира.»
 						<p class="greeting__text greeting__signature">
@@ -270,7 +274,7 @@
 <!--************************** Speakers-section **************************-->
 
 		<section class="speakers">
-			<div class="speakers__wrap">
+			<div class="speakers__wrap wrap">
 
 				<h2 class="h3__subtitle speakers__subtitle">Спикеры</h2>
 				
@@ -361,36 +365,36 @@
 <!--************************* Programm-section *************************-->
 
 		<section class="programm">
-			<div class="programm__wrap">
+			<div class="programm__wrap wrap">
 
 				<h2 class="h2__subtitle programm__subtitle">Программа форума</h2>
 
 				<div class="programm__items">
 					<div class="programm__item">
-						<p class="programm__data">День 1</p>
+						<a href="#" 	class="programm__data">День 1</a>
 						<div class="programm__line"></div>
-						<a href="#" class="programm__title">Официальное открытие форума</a>
+						<p class="programm__title">Официальное открытие форума</p>
 						<p class="programm__desc">Цифровая трансформация — это не только экономика, а глобальное явление, которое влияет на всю нашу жизнь. Она затрагивает и государственное управление, и задаёт новые методы ведения бизнеса, и меняет наши методы.</p>
 					</div>
 
 					<div class="programm__item">
-						<p class="programm__data">День 2</p>
+						<a href="#" 	class="programm__data">День 2</a>
 						<div class="programm__line"></div>
-						<a href="#" class="programm__title">Официальное открытие форума</a>
+						<p class="programm__title">Официальное открытие форума</p>
 						<p class="programm__desc">Цифровая трансформация — это не только экономика, а глобальное явление, которое влияет на всю нашу жизнь. Она затрагивает и государственное управление, и задаёт новые методы ведения бизнеса, и меняет наши методы.</p>
 					</div>
 
 					<div class="programm__item">
-						<p class="programm__data">День 3</p>
+						<a href="#" 	class="programm__data">День 3</a>
 						<div class="programm__line"></div>
-						<a href="#" class="programm__title">Официальное открытие форума</a>
+						<p class="programm__title">Официальное открытие форума</p>
 						<p class="programm__desc">Цифровая трансформация — это не только экономика, а глобальное явление, которое влияет на всю нашу жизнь. Она затрагивает и государственное управление, и задаёт новые методы ведения бизнеса, и меняет наши методы.</p>
 					</div>
 
 					<div class="programm__item">
-						<p class="programm__data">День 4</p>
+						<a href="#" 	class="programm__data">День 4</a>
 						<div class="programm__line"></div>
-						<a href="#" class="programm__title">Официальное открытие форума</a>
+						<p class="programm__title">Официальное открытие форума</p>
 						<p class="programm__desc">Цифровая трансформация — это не только экономика, а глобальное явление, которое влияет на всю нашу жизнь. Она затрагивает и государственное управление, и задаёт новые методы ведения бизнеса, и меняет наши методы.</p>
 					</div>
 					
@@ -409,7 +413,7 @@
 <!--************************** News-section **************************-->
 
 		<section class="news">
-			<div class="news__wrap">
+			<div class="news__wrap wrap">
 				<h2 class="h2__subtitle news__subtitle">Новости</h2>
 
 				<div class="news__items news__items-top">
@@ -567,7 +571,7 @@
 <!--************************** Contacts-section **************************-->
 
 		<section class="contacts">
-			<div class="contacts__wrap">
+			<div class="contacts__wrap wrap">
 
 				<h2 class="h2__subtitle contacts__subtitle">Контакты</h2>
 
