@@ -8,19 +8,19 @@ $(document).ready(function() {
 
 /************* Fixed menu *************/
 
-    // if ($(window).width() > 1200)   {
-    //     $(window).scroll(function () {
-    //         var scrolled = $(window).scrollTop();
-    //         if (scrolled >= 1) {
-    //             $('header').addClass('header__fixed');                      
-    //         }
-    //         else {
-    //             if (scrolled < 180) {
-    //                 $('header').removeClass('header__fixed');                                   
-    //             }
-    //         }
-    //     });
-    // }
+    if ($(window).width() > 1200)   {
+        $(window).scroll(function () {
+            var scrolled = $(window).scrollTop();
+            if (scrolled >= 1) {
+                $('header').addClass('header__fixed');                      
+            }
+            else {
+                if (scrolled < 180) {
+                    $('header').removeClass('header__fixed');                                   
+                }
+            }
+        });
+    }
 
 /************* Search animation in header *************/
 
