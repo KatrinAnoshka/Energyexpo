@@ -6,14 +6,6 @@ $(document).ready(function() {
         $(this).closest('.navigation').toggleClass('menu_state_open');
     });
 
-    // $('.menu__links-item-hover').hover(function() {
-    //     $(this).toggleClass('open');
-    // });
-
-    $('.menu__links-item-hover').hover(function() {
-        $(this).children('.submenu').toggleClass('open');
-    });
-
 /************* Fixed menu *************/
 
     if ($(window).width() > 1200)   {

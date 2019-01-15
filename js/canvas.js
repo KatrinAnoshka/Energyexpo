@@ -1,5 +1,4 @@
 $(document).ready(function() {
-   (function() {
 
     var ParticleNetworkAnimation, PNA;
     ParticleNetworkAnimation = PNA = function() {};
@@ -305,13 +304,18 @@ $(document).ready(function() {
         return array[Math.floor(Math.random()*array.length)];
     };
 
-pna = new ParticleNetworkAnimation();   
+pna = new ParticleNetworkAnimation(); 
 
-pna.init($('.topics__network')[0]);
-pna.init($('.programm__network')[0]);
-pna.init($('.greeting__network')[0]);
-pna.init($('.contacts__network')[0]);
+if ($('.topics__network').size())
+    pna.init($('.topics__network')[0]);
 
-}());
+if ($('.programm__network').size())
+    pna.init($('.programm__network')[0]);
+
+if ($('.greeting__network').size())
+    pna.init($('.greeting__network')[0]);
+
+if ($('.contacts__network').size())
+    pna.init($('.contacts__network')[0]);
 
 });
