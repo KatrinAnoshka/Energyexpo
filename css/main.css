@@ -211,6 +211,43 @@ input,
 	width: fit-content;
 }
 
+
+ul.submenu {
+    display: none;
+    z-index: 1000;
+    width: 194px;
+    background-color: #59a9ef;
+    padding: 10px;
+    position: absolute;
+    top: 61px;
+    left: -20px;
+    -webkit-transition: all 0.2s ease-out 0.15s;
+    -o-transition: all 0.2s ease-out 0.15s;
+    transition: all 0.2s ease-out 0.15s;
+}
+.submenu__links-item {
+    display: block;
+    border-bottom: 1px solid #fff;
+    -webkit-transition: color 0.3s ease-out;
+    -o-transition: color 0.3s ease-out;
+    transition: color 0.3s ease-out;
+}
+.submenu__links {
+    display: block;
+    padding: 10px;
+    padding-bottom: 5px;
+    color: #414141;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+}
+.submenu.open  {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
 /*************Header====================Top__search*************/
 
 .top__search {
@@ -408,10 +445,11 @@ a.button__red:hover {
 
 .topics {
     width: 100%;
-    max-width: 100%;
+    max-width: 1920px;
     height: auto;
     background-color: #fff;
     position: relative;
+    margin: auto;
 }
 h2.h2__subtitle {
     font-size: 2.375em;
@@ -1322,4 +1360,125 @@ a.button__contacts {
 	text-decoration: underline;
 }
 
+/*=======/////=========== About-page ===========/////=======*/
 
+/************ About-section ************/
+
+.about {
+	background-image: url(../img/about-page/about-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    margin: auto;
+}
+.about__wrap {
+	width: 1200px;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+  	justify-content: flex-start;
+  	padding-top: 5%;
+  	padding-bottom: 5%;
+}
+h1.about__title {
+  	font-size: 2.5em;
+  	font-weight: 500;
+  	color: rgb(242, 242, 242);
+  	line-height: 1.2;
+  	text-align: left;
+}
+.about__date {
+  	font-size: 1.875;
+  	font-weight: 300;
+  	color: rgb(242, 242, 242);
+  	line-height: 1.2;
+  	text-align: left;
+  	margin: 4% 0;
+}
+.about__text {
+  	font-size: 1.25em;
+  	font-family: "Roboto Regular";
+  	font-weight: 100;
+  	color: rgb(242, 242, 242);
+  	line-height: 1.2;
+  	text-align: left;
+  	max-width: 600px;
+}
+
+/******************* Description-section *******************/
+
+.description {
+	width: 100%;
+    max-width: 1920px;
+    height: auto;
+    background-color: #fff;
+    position: relative;
+    margin: auto;
+}
+.description__wrap {
+	width: 1200px;
+  	padding-top: 2%;
+  	padding-bottom: 6%;
+}
+.description__title {
+  	font-size: 1.75em;
+  	font-weight: 500;
+  	color: rgb(30, 33, 50);
+  	line-height: 1.2;
+  	text-align: left;
+  	margin: 40px 0;
+}
+.description__text {
+  	font-size: 1.125em;
+  	font-family: "Roboto Regular";
+  	color: rgb(30, 33, 50);
+  	line-height: 1.2;
+  	margin-bottom: 25px;
+}
+.description__links-wrap {
+	margin-bottom: 25px;
+	padding-left: 20px;
+}
+.description__links-wrap li {
+	padding-left: 15px;
+	margin-bottom: 25px;
+}
+.description__link {
+  	font-size: 1.125em;
+  	font-family: "Roboto Regular";
+  	color: rgb(30, 33, 50);
+  	text-decoration: underline;
+  	text-decoration-color: #8e9098;
+  	line-height: 1.2;
+}
+.description__link:hover {
+	color: #e31e24;
+	text-decoration-color: #e31e24;
+	text-decoration: underline;
+}
+.about__line-wrap {
+	width: 1200px;
+	max-width: 100%;
+	margin: auto;
+	text-align: left;
+	padding-left: 1.5%;
+	padding-right: 1.5%;
+}
+.about__line {
+  	width: 570px;
+  	max-width: 100%;
+  	height: 2px;
+  	margin: 0;
+}
