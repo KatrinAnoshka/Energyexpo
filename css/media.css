@@ -4,12 +4,13 @@
 
 @media only screen and (max-width: 1300px) {
 
+/**************** Speakers-section ****************/
+
     .speakers__flexslider .flex-direction-nav .flex-prev,
     .speakers__flexslider .flex-direction-nav .flex-next {
         display: none;
     }
-
-    
+  
 }
 
 @media only screen and (max-width: 1200px) {
@@ -23,28 +24,27 @@
         display: none;
     }
     .navigation__wrap {
-        -webkit-flex-direction: column-reverse;
         -moz-flex-direction: column-reverse;
         -ms-flex-direction: column-reverse;
         -o-flex-direction: column-reverse;
-        flex-direction: column-reverse;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+                flex-direction: column-reverse;
     }
 
 /************ Programm-section ************/
 
     .programm__items{
-        -webkit-flex-wrap: wrap;
-        -moz-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         -o-flex-wrap: wrap;
         flex-wrap: wrap;
-        /*margin-bottom: 20px;*/
     }
     .programm__item {
         width: 33%;
         margin-bottom: 4%;
     }
-/*Participants-section*/
+
+/************* Participants-section *************/
 
     .participants__item {
         width: 100%;
@@ -76,7 +76,9 @@
     .news__item {
         width: 47%;
         -ms-align-items: center;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
     .news__text {
         text-align: center;
@@ -84,20 +86,21 @@
     
   }
 
-
-
 @media only screen and (max-width: 880px) {
 
 /****************** Topics-section ******************/    
 
     .topics__main {
-        -webkit-flex-direction: column;
         -moz-flex-direction: column;
         -ms-flex-direction: column;
         -o-flex-direction: column;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-direction: column;
         -ms-align-items: center;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
     .topics__descr {
         width: 100%;
@@ -112,13 +115,10 @@
 
 /************ Programm-section ************/
 
-    /*.programm__items{
-        margin-bottom: 20px;
-    }*/
-      .programm__item {
-        width: 50%;
-      
+    .programm__item {
+        width: 50%;     
     }
+
 /************ News-section ************/
   
     .news__item {
@@ -131,9 +131,13 @@
 }
 
 @media only screen and (max-width: 550px) {
+
     body {
         font-size: 12px;
     }
+
+/************* Header-section *************/
+
     .header {
         padding: 20px 10px 30px;
     }
@@ -147,15 +151,6 @@
         top: 134px;
     }
 
-    
-
-    /*.forum__wrap,
-    .support__wrap,
-    .programm__wrap,
-    .contacts__wrap {
-        padding: 60px 10px;
-    }*/
-
 /************** Forum-section **************/
     
     .forum__subtitle {
@@ -168,8 +163,6 @@
 /************ Topics-section ************/
 
     .topics__top {
-        -webkit-flex-wrap: wrap;
-        -moz-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         -o-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -181,30 +174,28 @@
 /************ Participants-section ************/
 
    .participants {
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    -o-flex-direction: column;
-    flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-direction: column;
    }
    .partner, .exponent {
-    width: 100%;
+        width: 100%;
    }
 
-/* Programm-section */
+/************ Programm-section ************/
+
     a.button__programm {
         font-size: 18px;
         line-height: 1.25;
     }
-    .programm__item:last-child {
-        /*margin-bottom: 20px;*/
-    }
      .programm__item {
-        width: 100%;
-      
+        width: 100%;     
     }
 
-    /*News-section*/
+/************** News-section **************/
 
     .news__item {
         width: 100%;
@@ -213,7 +204,8 @@
         font-size: 1.28em;
         line-height: 2.9;
     }
-    /*Contacts-section*/
+
+/*********** Contacts-section ***********/
 
     .contacts__icons {
         padding: 30px 0;
@@ -224,27 +216,11 @@
     }
 }   
 
-
 /* Extra Small Devices, Phones */
-
-@media only screen and (max-width: 500px) {
-    
-
- 
-}
-
-@media only screen and (max-width: 476px) {
-
-
-}
 
 @media only screen and (max-width: 450px) {
 
-   /* body {
-        font-size: 10px;
-    }*/
-
-/******* Header-section *******/
+/**************** Header-section ****************/
 
     #lang__menu:after {
         background-size: 99%;
@@ -254,7 +230,7 @@
         right: 37px;
     }
 
-/********* Forum-section *********/
+/************** Forum-section **************/
     
     h1.title {
         font-size: 2.4em;
@@ -269,13 +245,13 @@
         width: 100%;
     }    
 
-    /*Contacts-section*/
+/************ Contacts-section ************/
 
     a.button__contacts {
         font: 13.2px;
     }
 
-    /*Footer-section*/
+/************* Footer-section *************/
 
     .footer__text {
         font-size: 9px;
@@ -284,19 +260,15 @@
 }
 
 @media only screen and (max-width: 430px) {
-    
-
 
 }
 
 @media only screen and (max-width: 400px) {
     
-  
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 350px) {
-
 
 }
 
