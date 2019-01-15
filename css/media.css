@@ -107,6 +107,26 @@
         margin-top: 1.5%;
     }
 
+/*=======/////=========== Subject-page ===========/////=======*/
+    
+    .subject__wrap {
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+        padding-top: 10%;
+    }
+    .subject__img-wrap {
+        padding-right: 0;
+        width: 60%;
+    }
+    .subject__descr {
+        width: 100%;
+    }
+    .subject__descr .forum__title {
+        margin: 25px 0;
+    }
 }
 
 /* Small Devices, Tablets */
@@ -213,6 +233,11 @@
     a.button__contacts {
         margin-top: 30px;
         line-height: 3.75;
+    }
+
+    .about__wrap {
+        padding-top: 12%;
+        padding-bottom: 12%;
     }
 }   
 

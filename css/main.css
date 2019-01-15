@@ -1446,7 +1446,7 @@ h1.about__title {
   	padding-top: 2%;
   	padding-bottom: 6%;
 }
-.description__title {
+.forum__title {
   	font-size: 1.75em;
   	font-weight: 500;
   	color: rgb(30, 33, 50);
@@ -1496,3 +1496,67 @@ h1.about__title {
   	height: 2px;
   	margin: 0;
 }
+
+/*=======/////=========== Subject-page ===========/////=======*/
+
+/************ Subject-section ************/
+
+.subject__top {
+	background-image: url(../img/subject-page/subject-bg.jpg);
+}
+.subject {
+	width: 100%;
+    max-width: 1920px;
+    height: auto;
+    background-color: #fff;
+    position: relative;
+    margin: auto;
+}
+.subject__wrap {
+	width: 1200px;
+  	padding-top: 2%;
+  	padding-bottom: 6%;
+  	display: -webkit-flex;
+  	display: -moz-flex;
+  	display: -ms-flex;
+  	display: -o-flex;
+  	display: flex;
+  	-ms-align-items: center;
+  	align-items: center;
+  	border-bottom: 2px solid rgb(166, 201, 252);
+}
+.subject__wrap:nth-child(6) {
+	border: none;
+}
+.subject__descr {
+	width: 65%;
+}
+.subject__img-wrap {
+	width: 35%;
+	padding-right: 30px;
+}
+.subject__text {
+  	font-size: 1em;
+  	font-family: "Roboto Medium";
+  	color: rgb(30, 33, 50);
+  	line-height: 1.2;
+  	margin-bottom: 25px;
+}
+.subject__links-wrap {
+	padding-left: 25px;
+}
+.subject__links-wrap li {
+	margin-bottom: 5px;
+}
+.subject__link {
+  	font-size: 1em;
+  	font-family: "Roboto Regular";
+  	color: #1e2132;
+  	line-height: 1.2;
+}
+.subject__link:hover {
+	color: rgb(227, 30, 36);
+	text-decoration: underline;
+	text-decoration-color: rgb(227, 30, 36);
+}
+
