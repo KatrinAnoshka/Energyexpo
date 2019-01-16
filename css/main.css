@@ -1637,4 +1637,103 @@ h1.about__title {
   	margin: 10px 0;
 }
 
+/*=======/////=========== Partners-page ===========/////=======*/
 
+/************ Partners-section ************/
+
+a.button__partners {
+	width: 210px;
+	height: 65px;
+	line-height: 3.6;
+	margin-top: 50px;
+}
+.partners__top {
+	background-image: url(../img/partners-page/partners-bg.jpg);
+}
+.partners__wrap {
+	width: 1200px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+ul.partners__tabs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-between;
+    list-style: none;
+    padding: 30px 0;
+}
+.partners__tabs li {
+	width: 370px;
+	max-width: 100%;
+  	height: 65px;
+	font-size: 1.375em;
+  	font-family: "Roboto Light";
+  	color: rgb(242, 242, 242);
+  	line-height: 1.25;
+  	text-align: center;
+	background: linear-gradient(to bottom right,#291c47 46%,#2c306d,#1e3c6e 80%);
+    padding: 3px 15px 5px 15px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.partners__tabs li.active,
+.partners__tabs li:hover {
+    background: linear-gradient(to top right,#9d281f 46%,#a23123,#af503e 80%);
+}
+.partners__item {
+    display: none;
+}
+#general__partners {
+    display: block;
+}
+.partners__img {
+  	background-color: rgb(255, 255, 255);
+  	box-shadow: none;
+  	width: 370px;
+  	max-width: 100%;
+  	height: 131px;
+  	position: relative;
+  	z-index: 1;
+  	margin: 40px 0;
+}
+.partners__list img {
+    max-width: 320px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.partners__img:hover {
+	box-shadow: -1.879px 0.684px 16.83px 0.17px rgba(166, 201, 252);
+}
+.partners__item ul {
+    list-style: none;
+}
+.partners__list {
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+     justify-content: space-between;
+}

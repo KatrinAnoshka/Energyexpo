@@ -91,6 +91,19 @@ $(document).ready(function() {
         scroll();
     }
 
+/*************** Tabs in Partners-page ***************/ 
+
+    $('.partners__tabs li').click(function(){
+        $divId = $(this).attr('target');
+
+        $('.partners__item').hide(400);
+        $('#'+$divId).show(400);
+
+        $('.partners__tabs li').removeClass('active');
+        $(this).addClass('active');
+
+    });
+    
 /*************** Chrome Smooth Scroll ***************/         
 
     try {

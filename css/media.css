@@ -83,7 +83,12 @@
     .news__text {
         text-align: center;
     }
-    
+
+/*=======/////=========== Partners-page ===========/////=======*/   
+
+    .partners__tabs li {
+        font-size: 1em;
+    }   
   }
 
 @media only screen and (max-width: 880px) {
@@ -153,7 +158,16 @@
     a.button__news {
         margin-top: 5%;
     }
-    
+
+/*=======/////=========== Partners-page ===========/////=======*/   
+
+    .partners__list {
+        justify-content: center;
+    }  
+    .partners__img {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 @media only screen and (max-width: 550px) {
@@ -252,7 +266,23 @@
 
     .staff__item {
         width: 75%;
-    }     
+    }   
+
+/*=======/////=========== Partners-page ===========/////=======*/   
+
+    a.button__partners {
+        font-size: 18px;
+    }   
+    .partners__tabs li {
+        font-size: 0.8em;
+        height: 39px;
+        padding-bottom: 0px;
+        padding-top: 9px;
+        width: 33%;
+    }
+    ul.partners__tabs {
+        padding-bottom: 15px;
+    }
 }   
 
 /* Extra Small Devices, Phones */
