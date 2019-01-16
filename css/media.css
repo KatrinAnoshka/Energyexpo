@@ -127,6 +127,12 @@
     .subject__descr .forum__title {
         margin: 25px 0;
     }
+
+/*=======/////=========== Staff-page ===========/////=======*/
+
+    .staff__item {
+        width: 46%;
+    }    
 }
 
 /* Small Devices, Tablets */
@@ -241,6 +247,12 @@
         padding-top: 12%;
         padding-bottom: 12%;
     }
+
+/*=======/////=========== Staff-page ===========/////=======*/
+
+    .staff__item {
+        width: 75%;
+    }     
 }   
 
 /* Extra Small Devices, Phones */
