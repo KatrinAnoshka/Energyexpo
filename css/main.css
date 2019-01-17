@@ -250,6 +250,8 @@ ul.submenu:before {
     padding-bottom: 5px;
     color: rgb(255, 255, 255) !important;
     text-decoration: none;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
 .submenu__links-item:hover {
@@ -1403,7 +1405,9 @@ a.button__contacts {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-  	justify-content: flex-start;
+  	-webkit-box-pack: start;
+  	    -ms-flex-pack: start;
+  	        justify-content: flex-start;
   	padding-top: 5%;
   	padding-bottom: 5%;
 }
@@ -1475,12 +1479,14 @@ h1.about__title {
   	font-family: "Roboto Regular";
   	color: rgb(30, 33, 50);
   	text-decoration: underline;
-  	text-decoration-color: #8e9098;
+  	-webkit-text-decoration-color: #8e9098;
+  	        text-decoration-color: #8e9098;
   	line-height: 1.2;
 }
 .description__link:hover {
 	color: #e31e24;
-	text-decoration-color: #e31e24;
+	-webkit-text-decoration-color: #e31e24;
+	        text-decoration-color: #e31e24;
 	text-decoration: underline;
 }
 .about__line-wrap {
@@ -1517,13 +1523,16 @@ h1.about__title {
 	width: 1200px;
   	padding-top: 2%;
   	padding-bottom: 6%;
-  	display: -webkit-flex;
   	display: -moz-flex;
   	display: -ms-flex;
   	display: -o-flex;
+  	display: -webkit-box;
+  	display: -ms-flexbox;
   	display: flex;
   	-ms-align-items: center;
-  	align-items: center;
+  	-webkit-box-align: center;
+  	    -ms-flex-align: center;
+  	        align-items: center;
   	border-bottom: 2px solid rgb(166, 201, 252);
 }
 .subject__wrap:nth-child(6) {
@@ -1558,7 +1567,8 @@ h1.about__title {
 .subject__link:hover {
 	color: rgb(227, 30, 36);
 	text-decoration: underline;
-	text-decoration-color: rgb(227, 30, 36);
+	-webkit-text-decoration-color: rgb(227, 30, 36);
+	        text-decoration-color: rgb(227, 30, 36);
 }
 
 /*=======/////=========== Staff-page ===========/////=======*/
@@ -1577,12 +1587,14 @@ h1.about__title {
   	font-size: 1.125em;
   	color: rgb(30, 33, 50);
   	text-decoration: underline;
-  	text-decoration-color: #c7c7cc;
+  	-webkit-text-decoration-color: #c7c7cc;
+  	        text-decoration-color: #c7c7cc;
   	line-height: 1.2;
 }
 .staff__link:hover {
 	color: rgb(227, 30, 36);
-	text-decoration-color: rgb(227, 30, 36);
+	-webkit-text-decoration-color: rgb(227, 30, 36);
+	        text-decoration-color: rgb(227, 30, 36);
 	text-decoration: underline;
 }
 .staff .forum__title {
@@ -1609,19 +1621,25 @@ h1.about__title {
     margin: auto;
 }
 .staff__text {
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	-webkit-flex-direction: column;
 	-moz-flex-direction: column;
 	-ms-flex-direction: column;
 	-o-flex-direction: column;
-	flex-direction: column;
-	justify-content: space-between;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	        flex-direction: column;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	-ms-align-items: center;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 .staff__name {
   	font-size: 1.125em;
@@ -1660,7 +1678,8 @@ ul.partners__tabs {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
     list-style: none;
     padding: 30px 0;
 }
@@ -1673,17 +1692,29 @@ ul.partners__tabs {
   	color: rgb(242, 242, 242);
   	line-height: 1.25;
   	text-align: center;
+	background: -webkit-gradient(linear,left top, right bottom,color-stop(46%, #291c47),color-stop(#2c306d),color-stop(80%, #1e3c6e));
+	background: -webkit-linear-gradient(top left,#291c47 46%,#2c306d,#1e3c6e 80%);
+	background: -o-linear-gradient(top left,#291c47 46%,#2c306d,#1e3c6e 80%);
 	background: linear-gradient(to bottom right,#291c47 46%,#2c306d,#1e3c6e 80%);
     padding: 3px 15px 5px 15px;
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
     cursor: pointer;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .partners__tabs li.active,
 .partners__tabs li:hover {
+    background: -webkit-gradient(linear,left bottom, right top,color-stop(46%, #9d281f),color-stop(#a23123),color-stop(80%, #af503e));
+    background: -webkit-linear-gradient(bottom left,#9d281f 46%,#a23123,#af503e 80%);
+    background: -o-linear-gradient(bottom left,#9d281f 46%,#a23123,#af503e 80%);
     background: linear-gradient(to top right,#9d281f 46%,#a23123,#af503e 80%);
 }
 .partners__item {
@@ -1694,7 +1725,8 @@ ul.partners__tabs {
 }
 .partners__img {
   	background-color: rgb(255, 255, 255);
-  	box-shadow: none;
+  	-webkit-box-shadow: none;
+  	        box-shadow: none;
   	width: 370px;
   	max-width: 100%;
   	height: 131px;
@@ -1714,7 +1746,8 @@ ul.partners__tabs {
     z-index: 2;
 }
 .partners__img:hover {
-	box-shadow: -1.879px 0.684px 16.83px 0.17px rgba(166, 201, 252);
+	-webkit-box-shadow: -1.879px 0.684px 16.83px 0.17px rgba(166, 201, 252);
+	        box-shadow: -1.879px 0.684px 16.83px 0.17px rgba(166, 201, 252);
 }
 .partners__item ul {
     list-style: none;
@@ -1771,22 +1804,25 @@ ul.partners__tabs {
   	line-height: 1.2;
 }
 .back-arrow {
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	-ms-align-items: center;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 .back-arrow__link {
 	display: block;
 	padding-right: 15px;
 }
 .back-arrow__text {
-  font-size: 0.875em;
-  font-family: "Roboto Medium";
-  color: rgb(30, 33, 50);
-  text-transform: uppercase;
-  line-height: 1.2;
+  	font-size: 0.875em;
+  	font-family: "Roboto Medium";
+  	color: rgb(30, 33, 50);
+  	text-transform: uppercase;
+  	line-height: 1.2;
 }
