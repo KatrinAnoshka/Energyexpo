@@ -31,6 +31,9 @@
         -webkit-box-direction: reverse;
                 flex-direction: column-reverse;
     }
+    .menu__links-item-enter {
+        margin-top: 10px;
+    }
 
 /************ Programm-section ************/
 
