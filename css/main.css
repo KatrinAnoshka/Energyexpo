@@ -214,7 +214,7 @@ ul.submenu {
     display: none;
    	z-index: 1000;
     width: 270px;
-    background-image: url(../img/about-page/submenu.jpg);
+    background-image: url(../img/header/submenu.jpg);
     background-position: center;
     background-size: cover;
     padding: 20px 10px;
@@ -1382,7 +1382,7 @@ a.button__contacts {
 /************ About-section ************/
 
 .about {
-	background-image: url(../img/about-page/about-bg.jpg);
+	background-image: url(../img/forum-pages/about-page/about-bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -1509,7 +1509,7 @@ h1.about__title {
 /************ Subject-section ************/
 
 .subject__top {
-	background-image: url(../img/subject-page/subject-bg.jpg);
+	background-image: url(../img/forum-pages/subject-page/subject-bg.jpg);
 }
 .subject {
 	width: 100%;
@@ -1576,7 +1576,7 @@ h1.about__title {
 /************ Staff-section ************/
 
 .staff__top {
-	background-image: url(../img/staff-page/staff-bg.jpg);
+	background-image: url(../img/forum-pages/staff-page/staff-bg.jpg);
 }
 .staff__wrap {
 	width: 1200px;
@@ -1666,7 +1666,7 @@ a.button__partners {
 	margin-top: 50px;
 }
 .partners__top {
-	background-image: url(../img/partners-page/partners-bg.jpg);
+	background-image: url(../img/forum-pages/partners-page/partners-bg.jpg);
 }
 .partners__wrap {
 	width: 1200px;
@@ -1776,7 +1776,7 @@ ul.partners__tabs {
 /************ News-section ************/
 
 .news__top {
-	background-image: url(../img/news-page/news-page-bg.jpg);
+	background-image: url(../img/forum-pages/news-page/news-page-bg.jpg);
 }
 .news-page {
 	background: #fff;
