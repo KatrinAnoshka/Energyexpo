@@ -1868,3 +1868,76 @@ ul.partners__tabs {
 .visitors__about {
     background-image: url(../img/visitors-pages/about-page/about-bg.jpg);
 }
+
+/*======================================================*/
+            /*=  Visitors-programm-page  ==*/    
+/*=======================================================*/
+
+.visitors__programm {
+    background-image: url(../img/visitors-pages/programm-page/programm-bg.jpg);
+}
+.timetable {
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    background-color: #fff;
+    position: relative;
+    margin: auto;
+}
+.timetable__wrap {
+    width: 1210px;
+    padding-top: 6%;
+    padding-bottom: 6%;
+}
+.timetable__days {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+    border-bottom: 2px solid rgb(166, 201, 252);
+}
+.timetable__day {
+    font-size: 1.25em;
+    font-family: "Roboto Regular";
+    color: #1e2132;
+    text-transform: uppercase;
+    line-height: 1.2;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    width: 22%;
+    padding-bottom: 2%;
+    margin-bottom: -2px;
+    margin-right: 3%;
+    transition: max-width 1s linear;
+}
+.timetable__title {
+    text-transform: none;
+    font-family: "Roboto Medium";
+    margin-top: 10px;
+}
+.timetable__day-active,
+.timetable__day:hover {
+    color: #e31e24;
+    border-bottom: 2px solid rgb(69, 144, 252);
+}
+
+
+
+
+
+
+
