@@ -1885,11 +1885,12 @@ ul.partners__tabs {
     margin: auto;
 }
 .timetable__wrap {
-    width: 1210px;
+    width: 1200px;
     padding-top: 6%;
     padding-bottom: 6%;
 }
-.timetable__days {
+.timetable__days,
+.timetable__groups {
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -1902,11 +1903,10 @@ ul.partners__tabs {
     flex-wrap: wrap;
     border-bottom: 2px solid rgb(166, 201, 252);
 }
-.timetable__day {
+.timetable__link {
     font-size: 1.25em;
     font-family: "Roboto Regular";
     color: #1e2132;
-    text-transform: uppercase;
     line-height: 1.2;
     display: -webkit-flex;
     display: -moz-flex;
@@ -1922,18 +1922,109 @@ ul.partners__tabs {
     padding-bottom: 2%;
     margin-bottom: -2px;
     margin-right: 3%;
-    transition: max-width 1s linear;
+    position: relative;
+}
+.timetable__link:last-child {
+    margin-right: 0;
+    width: 25%;
+}
+.timetable__day {
+     text-transform: uppercase;
 }
 .timetable__title {
     text-transform: none;
     font-family: "Roboto Medium";
     margin-top: 10px;
 }
-.timetable__day-active,
-.timetable__day:hover {
+.timetable__link-active,
+.timetable__link:hover {
     color: #e31e24;
-    border-bottom: 2px solid rgb(69, 144, 252);
 }
+.timetable__link:after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0;
+    background: rgb(69, 144, 252);
+    transition: width 0.3s ease-in-out;
+    left: 0;
+    bottom: 0;
+}
+.timetable__link-active:after {
+    background: rgb(69, 144, 252);
+    width: 100%;
+}
+.timetable__link:hover:after {
+    width: 100%;
+}
+.timetable__group {
+    padding-top: 3%;
+    font-family: "Roboto Medium";
+}
+.timetable__main {
+    position: relative;
+    margin-top: 50px;
+}
+.timetable__cell,
+.timetable__container,
+.timetable__container-main {
+    position: absolute;
+}
+.timetable__cell {
+    padding-left: 2px;
+}
+.timetable__box {
+    font-size: 1.25em;
+    font-family: "Roboto Medium";
+    color: rgb(30, 33, 50);
+    line-height: 1.55;
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    background-color: rgb(166, 201, 252);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 19px;
+}
+.timetable__top {
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+    padding: 10px;
+}
+.timetable__section {
+    border-radius: 10px;
+    background-color: rgb(211, 225, 245);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+.timetable__section-title {
+    font-size: 0.9375em;
+    font-family: "Roboto Medium";
+    color: rgb(30, 33, 50);
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+.timetable__section-time {
+    font-size: 1em;
+    font-family: "Roboto Medium";
+    color: rgb(69, 144, 252);
+}
+
 
 
 
