@@ -191,21 +191,45 @@
     .timetable__container-time {
         display: none;
     }
+    .timetable__main {
+        height: auto !important;
+    }
     .timetable__container-main {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        position: relative;
+        position: static !important;
+        height: auto!important;
+    }
+    .timetable__cell {
+        position: static !important;
+        height: auto!important;
+        margin-bottom: 5px;
     }
     .timetable__container-box {
-        position: relative;
+        position: static !important;
         width: 80% !important;
         top: 0 !important;
         height: auto !important;
         left: 0 !important;
         right: 0 !important;
+        margin: auto;
     }
-  
+    .timetable__box {
+        padding-top: 0;
+        margin-top: 18px;
+        min-height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .timetable__section {
+        -ms-align-items: center;
+        align-items: center;
+    }
+    .timetable__section-time {
+        padding-top: 10px;
+    }
+    .timetable__link {
+        font-size: 16px;
+    }
 }
 
 @media only screen and (max-width: 550px) {
@@ -320,6 +344,20 @@
     }
     ul.partners__tabs {
         padding-bottom: 15px;
+    }
+
+/*======================================================*/
+            /*=  Visitors-programm-page  ==*/    
+/*=======================================================*/
+    
+    .timetable__main {
+        margin-top: 27px;
+    }
+    .timetable__section-title {
+        font-size: 12px;
+    }
+    .timetable__link {
+        font-size: 11px;
     }
 }   
 
