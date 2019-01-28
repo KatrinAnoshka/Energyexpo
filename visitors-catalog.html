@@ -99,29 +99,132 @@
 <!--************************** Catalog-section **************************-->
 
 		<section class="catalog">
-			<div class="catalog__wrap wrap">
-				
-				<form class="filters-form">
+	
+			<div class="filters__form">
 
-					<div class="outer B5">
-						<div class="inner"> 
-							<div class="filters-top-holder">
-								<div class="filters-top"> 
-									<label for="keyword">Search</label>
-									<input id="keyword" name="keyword" type="text" placeholder="Enter keyword" value="">
-									<button type="submit" class="submit-filters"><i class="icon-mwc-search"></i></button>
-								</div> 
-								<button type="button" class="trigger-filters active-trigger"><span class="fa fa-sliders"></span></button>
-							</div>                
-						</div>
-					</div>     
-					
-					
-				</form>
+				<div class="outer"> 
+					<div class="filters__top wrap">
+						<div class="filters__search"> 
+							<label for="keyword">Поиск</label>
+							<div class="filters__input">
+								<input id="keyword" name="keyword" type="text" placeholder="Слово для поиска" value="">
+								<button type="submit" class="filters__submit"></button>
+							</div>	
+						</div> 
+						<div class="filters__icon">
+							<p class="filters__name">Фильтр</p>
+							<button type="button" class="filters__trigger"><span class="filters__trigger-icon"></span></button>
+						</div>	
+					</div>                						
+				</div><!-- /end of Outer -->
+
+				<div class="inner">
+					<div class="inner__wrap wrap">
+						<div class="inner__form">
+							<p class="inner__title">Рубрика</p>
+							<div class="inner__select">
+							   	<div class="pseudo-select">
+                    				<div class="select">Все</div>
+                    				<div class="options" style="display: none;">
+                        				<div>«Энергетика. Экология. Энергосбережение. Электро»/ Exhibition «ENERGYEXPO»</div>
+                        				<div>«Технологии для нефтехимической отрасли» / Exhibition "OIL & GAS TECHNOLOGIES"</div>  
+                        				<div>«Энергетика. Экология. Энергосбережение. Электро»/ Exhibition «ENERGYEXPO»</div>
+                        				<div>«Технологии для нефтехимической отрасли» / Exhibition "OIL & GAS TECHNOLOGIES"</div>    
+                    				</div>
+                    				<input type="text" class="hidden" name="select" value="select">
+                				</div>					
+							</div>
+						</div> 
+							
+						<div class="inner__filter">
+							<p class="inner__title">Фильтр <br>по алфавиту</p>
+							<div class="inner__alphabet">
+								<div class="alphabet alphabet__ru">
+									<a href="#" class="inner__char">А-Б</a>
+									<a href="#" class="inner__char">В-Г</a>
+									<a href="#" class="inner__char">Д-Ж</a>
+									<a href="#" class="inner__char">З-И</a>
+									<a href="#" class="inner__char">К-Л</a>
+									<a href="#" class="inner__char">М-Н</a>
+									<a href="#" class="inner__char">О-П</a>
+									<a href="#" class="inner__char">Р-С</a>
+									<a href="#" class="inner__char">Т-У</a>
+									<a href="#" class="inner__char">Ц-Ч</a>
+									<a href="#" class="inner__char">Ш-Ы</a>
+									<a href="#" class="inner__char">Э-Я</a>
+									</div>	
+								<div class="alphabet alphabet__eng">
+									<a href="#" class="inner__char">A-B</a>
+									<a href="#" class="inner__char">C-D</a>
+									<a href="#" class="inner__char">E-F</a>
+									<a href="#" class="inner__char">G-H</a>
+									<a href="#" class="inner__char">I-J</a>
+									<a href="#" class="inner__char">K-L</a>
+									<a href="#" class="inner__char">M-O</a>
+									<a href="#" class="inner__char">P-R</a>
+									<a href="#" class="inner__char">S-T</a>
+									<a href="#" class="inner__char">U-V</a>
+									<a href="#" class="inner__char">W-X</a>
+									<a href="#" class="inner__char">Y-Z</a>
+								</div>	
+							</div><!-- /end of Inner__alphabet -->
+						</div><!-- /end of Inner__filter -->
+ 					</div><!-- /end of Inner__wrap -->
+				</div><!-- /end of Inner -->   
+		
+			</div><!-- /end of Filters_form -->
 				
+			<div class="catalog__items-wrap wrap">
+				<div class="catalog__items">
+					<p class="catalog__letter">А</p>
+					<ul class="catalog__list">
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+					</ul>
+					<p class="catalog__letter">Б</p>
+					<ul class="catalog__list">
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+						<li><a href="#">ABB Belarus</a></li>
+						<li><a href="#">AES-komplekt, Unitary enterprise</a></li>
+					</ul>
+				</div><!-- /end of Catalog__items -->
+			</div><!-- /end of Catalog__items-wrap -->
 			
-			</div><!-- /end of Description__wrap -->
-
 			<div class="about__line-wrap">
 				<hr color="#a6c9fc" class="about__line">
 			</div>

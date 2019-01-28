@@ -61,6 +61,8 @@
     .topics__descr {
         width: 55%;
     }
+
+
     
 }
 
@@ -100,6 +102,32 @@
     .timetable__section {
         font-size: 0.7375em;
     }  
+
+/*======================================================*/
+            /*=  Visitors-ticket-page  ==*/    
+/*=======================================================*/
+
+    .filters__top {
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+        -ms-align-items: center;
+        align-items: flex-start;
+    }
+    .outer {
+        padding: 0 20px;
+    }
+    .filters__search {
+        width: 90%;
+    }
+    .filters__icon {
+        margin-top: 20px;
+        width: 150px;
+        -ms-align-self: center;
+        align-self: center;
+    }    
 
   }
 
@@ -150,7 +178,35 @@
 
     .staff__item {
         width: 46%;
-    }    
+    } 
+
+/*======================================================*/
+            /*=  Visitors-ticket-page  ==*/    
+/*=======================================================*/
+
+    .inner__form,
+    .inner__filter {
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+        -ms-align-items: center;
+        align-items: center;
+    }
+    .inner__select {
+        height: 65px;
+    }
+    .pseudo-select {
+        font-size: 0.8em;
+    }  
+    .inner__title {
+        margin-bottom: 15px;
+        text-align: center;
+    } 
+    .inner__char {
+        margin-right: 10px;
+    }
 }
 
 /* Small Devices, Tablets */
@@ -400,6 +456,14 @@
 
     .footer__text {
         font-size: 9px;
+    }
+
+/*======================================================*/
+            /*=  Visitors-catalog-page  ==*/    
+/*=======================================================*/    
+
+    .pseudo-select .options {
+        top: 49px;
     }
 
 }
