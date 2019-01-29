@@ -2389,6 +2389,44 @@ input#keyword::placeholder {
     -ms-transform: translate(-50%, -50%);
     text-align: center;
 }
-
-
-
+.fancybox-skin {
+    background: transparent;
+}
+.fancybox-overlay {
+    background: rgba(251, 251, 251, 0.75);
+}
+.fancybox-opened .fancybox-skin {
+    box-shadow: none;
+}
+.fancybox-close {
+    background-image: url(../img/media-pages/photo-page/close.png);
+    width: 21px;
+    height: 21px;
+    right: 20px;
+    top: -10px;
+}
+.fancybox-next span {
+    background-image: url(../img/media-pages/photo-page/arrow-right.png);
+    background-position: 0;
+}
+.fancybox-prev span {
+    background-image: url(../img/media-pages/photo-page/arrow-left.png);
+    background-position: 0;
+}
+.fancybox-next span:hover {
+    background-image: url(../img/media-pages/photo-page/arrow-right-hover.png);
+}
+.fancybox-prev span:hover {
+    background-image: url(../img/media-pages/photo-page/arrow-left-hover.png);
+}
+.fancybox-next {
+    right: -65px;
+}
+.fancybox-prev {
+    left: -70px;
+}
+.fancybox-nav span {
+    top: 45%;
+    width: 37px;
+    height: 63px;
+}
