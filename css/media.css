@@ -129,6 +129,12 @@
         align-self: center;
     }    
 
+/*======================================================*/
+            /*=  Visitors-programm-page  ==*/    
+/*=======================================================*/
+    .media .news__title {
+        text-align: center;
+    }
   }
 
 @media only screen and (max-width: 880px) {
@@ -286,6 +292,15 @@
     .timetable__link {
         font-size: 16px;
     }
+
+/*======================================================*/
+            /*=  Media-photo-video-page  ==*/    
+/*=======================================================*/
+
+    .media .partners__tabs li {
+        margin-right: 0; 
+    }
+
 }
 
 @media only screen and (max-width: 550px) {
@@ -414,6 +429,17 @@
     }
     .timetable__link {
         font-size: 11px;
+    }
+
+/*======================================================*/
+            /*=  Media-photo-video-page  ==*/    
+/*=======================================================*/
+
+    .media ul.partners__tabs {
+        justify-content: center;
+    }
+    .media .partners__tabs li {
+        width: 50%;
     }
 }   
 
