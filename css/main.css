@@ -2346,6 +2346,9 @@ input#keyword::placeholder {
     width: 1200px;
     padding-top: 6%;
     padding-bottom: 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .media__photo-item {
     display: block;
@@ -2355,9 +2358,11 @@ input#keyword::placeholder {
     margin-right: 1.5%;
     margin-bottom: 3%;
     width: 31.8%;
-    float: left;
     cursor: pointer;
     position: relative;
+}
+.media__photo-item:nth-child(3n) {
+    margin-right: 0;
 }
 .media__photo-img {
     width: 100%;
@@ -2397,6 +2402,9 @@ input#keyword::placeholder {
 }
 .fancybox-opened .fancybox-skin {
     box-shadow: none;
+}
+.fancybox-outer {
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.5);
 }
 .fancybox-close {
     background-image: url(../img/media-pages/photo-page/close.png);

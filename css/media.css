@@ -301,8 +301,49 @@
         margin-right: 0; 
     }
 
-}
+/*======================================================*/
+            /*=  Media-photo-video-page  ==*/    
+/*=======================================================*/    
 
+    .media__photo-item {
+        width: 48%;
+    }
+    .media__photo-item:nth-child(3n) {
+        margin-right: 1.5%;
+    }
+    .media__photo-item:nth-child(2n) {
+        margin-right: 0;
+    }
+    .fancybox-next {
+        right: 0;
+    }
+    .fancybox-prev {
+        left: 0;
+    }
+    .fancybox-prev span, .fancybox-next span {
+        background-image: url(../libs/fancybox/fancybox_sprite@2x.png);
+        background-size: 44px 152px;
+    }
+    .fancybox-prev span {
+        left: 10px;
+        background-position: 0 -36px;
+    }
+    .fancybox-next span {
+        right: 10px;
+        background-position: 0 -72px;
+    }
+    .fancybox-nav span {       
+        top: 50%;
+        width: 36px;
+        height: 34px;
+    }
+    .fancybox-next span:hover {
+        background-image: url(../libs/fancybox/fancybox_sprite@2x.png);
+    }
+    .fancybox-prev span:hover {
+        background-image: url(../libs/fancybox/fancybox_sprite@2x.png);
+    }
+}
 @media only screen and (max-width: 550px) {
 
     body {
@@ -441,6 +482,22 @@
     .media .partners__tabs li {
         width: 50%;
     }
+
+/*======================================================*/
+            /*=  Media-photo-video-page  ==*/    
+/*=======================================================*/    
+
+    .media__photo-item {
+        width: 95%;
+        margin-right: 0;
+    } 
+    .media__photo-item:nth-child(3n) {
+        margin-right: 0;
+    }
+    .media__photo-item:nth-child(2n) {
+        margin-right: 0;
+    }   
+ 
 }   
 
 /* Extra Small Devices, Phones */
