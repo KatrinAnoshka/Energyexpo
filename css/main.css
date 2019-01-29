@@ -2438,3 +2438,30 @@ input#keyword::placeholder {
     width: 37px;
     height: 63px;
 }
+
+/*==================================================*/
+            /*==  Media-photo-page  ==*/    
+/*===================================================*/
+
+.news__img {
+    cursor: pointer;
+}
+.news__photo-play {
+    position: absolute;
+    width: 83px;
+    height: 102px;
+    top: 50%;
+    right: 22%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-out; 
+    background-image: url(../img/media-pages/video-page/play.png);
+}
+.news__img:hover .news__photo-play {
+    position: absolute;
+    width: 55px;
+    height: 74px;
+    top: 50%;
+    right: 27%;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/media-pages/video-page/play-hover.png);
+}
