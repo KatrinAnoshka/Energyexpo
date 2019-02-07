@@ -104,9 +104,20 @@ $(document).ready(function() {
 
     });
 
-/*************** Fancybox in Photo-page ***************/ 
+/*************** Fancybox in Photo-page and Video-page ***************/ 
 
     $("a.fancy").fancybox();
+    $('.fancybox').fancybox({
+        padding   : 0,
+        maxWidth  : '100%',
+        maxHeight : '100%',
+        width   : 970,
+        height    : 550,
+        autoSize  : true,
+        closeClick  : true,
+        openEffect  : 'none',
+        closeEffect : 'none'
+    });
     
 /*======================================================*/
             /*=  Visitors-ticket-page  ==*/    
